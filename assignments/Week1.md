@@ -7,6 +7,8 @@ In addition to the title, I felt as the page is a blog, adding a lot of java scr
 
 I used a simple gradient for the background and color changes or text size increase on hover to help the user recognize the presence of a hyperlink at said locations.
 
+I started with a simple wireframe https://github.com/fnassar/connectionslab/blob/main/Week1/ProjectDocumentation/Wireframe.jpg that simply describes the website i briefly talked about above.
+
 That being said, here is the link to my simple website.
-### Link
+### Link:
 https://fnassar.github.io/connectionslab/Week1/ProjectDocumentation/index.html
