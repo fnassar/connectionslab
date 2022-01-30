@@ -13,5 +13,5 @@ I started with a simple wireframe that simply describes the website i briefly ta
 
 With that being said, here is the link to my website.
 ### Link:
-[Project Documentation Website](https://fnassar.github.io/connectionslab/Week1/ProjectDocumentation/index.html "Project Documentation Website")
+[_Project Documentation_ Website](https://fnassar.github.io/connectionslab/Week1/ProjectDocumentation/index.html "Website link")
 
