@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="jquery-3.6.0.min.js"></script>
+  
+  <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Corben&family=Rubik+Beastly&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <section class="nav">
+    <div class="title" id="slideopen" style="display: none;">
+      <a href="#title" style="text-decoration: none; color:aliceblue;"><p id="title">Digital Doodle</p></a>
+      <p id="icons">
+        <a class="icons" target="_blank" href="https://www.linkedin.com/in/fatema-ahmed-fayez-nassar-39a392209/" style="text-decoration: none; color:rgb(213, 222, 230);"><iconify-icon data-icon="bx:bxl-linkedin"></iconify-icon></a>&nbsp&nbsp&nbsp
+        <a class="icons" target="_blank" href="https://github.com/fnassar" style="text-decoration: none; color:rgb(213, 222, 230);"><iconify-icon data-icon="bx:bxl-github"></iconify-icon></a>&nbsp&nbsp&nbsp
+        <a class="icons" target="_blank" href="mailto:fan6236@nyu.edu" style="text-decoration: none; color:rgb(213, 222, 230);"><iconify-icon data-icon="bx:bx-mail-send"></iconify-icon></a>
+      </p>
+    </div>
+    <nav> 
+      <a href="#Introduction" style="text-decoration: none; color:aliceblue;">INTRODUCTION</a>
+      <a href="#Description" style="text-decoration: none; color:aliceblue;" >DESCRIPTION</a>
+      <a href="#Progress" style="text-decoration: none; color:aliceblue;" >PROGRESS</a>
+      <a href="#Videos" style="text-decoration: none; color:aliceblue;" >Videos</a>
+    </nav>
+  </section>
+
+  <section class="container main">
+    <section class="subcontainer" id="title">
+      <h1 id="maintitle">Digital Doodle</h1>
+      <h2 id="title">Project Documentation</h2>
+      <h2 id="title">Fatema Nassar </br> &  Ingy El Sheikh</h2>
+      <h1 id="title">Class Intro. to Interactive Media</h2>
+    </section>
+
+    <section class="subcontainer" id="Introduction">
+      <h2 id="title">Introduction</h2>
+      <p>
+        This was quite a journey, with many ups and downs but definitely one that ended in relief and content! The idea of our final project revolved giving our audience a chance to go back to their childhood and just have fun! Anyone that interacts with our project is given the opportunity to just draw whatever their heart desires, and the physical interactivity (because users will draw with their hands)  gives it an extra interesting and more immersive experience. We wanted our project to give the user complete freedom, so they users can choose between 5 different brushes and use the color they want to draw using the color selector.
+      </p>
+      <div class="row">
+        <img style="max-height: 35vh;" src="images/progress2.jpg">
+        &nbsp&nbsp&nbsp
+        <img style="max-height: 35vh;" src="images/progress1.jpg">
+      </div>
+      
+      
+    </section>
+
+    <section class="subcontainer" id="Description">
+      <h2 id="title">Description</h2>
+      <h1 id="sub-sub">Implementation:</h1>
+      <p>There were mainly two aspects of this project, the processing aspect and the Arduino aspect (and serial communication). This is essentially also how we split the work between us. I essentially took on the challenge of the processing side of things and Ingy took on the challenge of the Arduino side of things and the blog documentations. So I is the one that created the beautiful generative art pieces that played the role of our brushes, and she worked on the fiducial tracking as well (which was a pain! so she did a great job). While Ingy focused on the arduino side of things, wiring up the buttons and slide potentiometer, creating the color gradient and its code on processing, and creating the serial communication between arduino and processing, Ingy also took responsibility of the blog documentation. However, we also found ourselves working together most of the time, I would help Ingy with the arduino when she was stuck and vice versa. So it eventually turned into us working together on most of the aspects of the project rather than individually which worked out great!</p>
+      <div class="row">
+        <img style="max-height: 35vh;" src="images/final3.jpg">
+        &nbsp&nbsp&nbsp
+        <img style="max-height: 35vh;" src="images/final2.jpg">
+      </div>
+      <h1 id="sub-sub">lessons learned/how to improve:</h1>
+      <p>This project is one that definitely helped us grow. Naturally it was not a perfect linear growth, hence there is always room for improvement. reflecting on where we can improve is definitely an essential thing to do. After the showcase these are the things we noticed could have been executed better:
+        <ul>
+          <li>During our presentation to the class on the 13th, a very inconvenient and stupid mistake (we just need to move the location of the project slightly due to lighting issue) caused us to panic and not be able to show the class our project. lesson learned! we should have set up earlier especially since our project was not very straight forward and is prone to spontaneous errors.Luckily it all worked out in the end.</li>
+          <li>When it comes to the project itself, we found that we should have included some sort of feedback for when the buttons are pressed, just to let the person know which brush they are using.</li>
+          <li>We also learned that sometimes the finer details take even more time and effort than the bigger aspects of the project! and they bring the project together at the end.</li>
+        </ul>
+        
+      </p>
+    </section>
+
+    <section class="subcontainer" id="Progress">
+      <h2 id="title">Progress</h2>
+      <p>
+        <ol>
+          <li>First of all, we finalized the idea since we were not working together initially. We decided on everything we needed and the process we would complete the project in.</li>
+          <li>The brushes were complete (the 5 generative art pieces that play as the brushes)</li>
+          <li>started working on the fiducial QR code (which was a pain !) in order to allow the user to use their hands to draw on the sketch, we decided we will have a glove with the QR stuck to it and the user will wear the glove to draw, luckily we were able to get it to work. Simultaneously we were working on the arduino side of things, completing first the color gradient. The color gradient on processing is actually an image and the get(); function was used to get the color at the position of the rectangle that was also mapped and connected to arduino through the slide potentiometer.</li>
+          <li>Completed the the creation of the box using the laser cutter ! as well as finishing connecting the arcade buttons on arduino and creating code to connect it to processing, so that each button corresponds to a different brush.</li>
+          <li>We then finished assembling the box and creating the reset button (to return the sketch back to being blank again). We decided to create a box, so that the arduino doesn’t show as it is not very visually pleasing, and in order to ensure that nothing moves around as we are using a lot of wires that may move around.</li>
+          <li>We conducted user testing.</li>
+          <img style="max-height: 35vh;" src="images/box.png">
+ 
+
+
+
+        </ol>
+      </p>
+      
+    </section>
+
+    <section class="subcontainer" id="Videos">
+    <h2 id="title">Videos</h2>
+    <p>Here are some videos of people using the final product!!</p>
+    <div class="col">
+      <h1></br>Video 1:</br></h1>
+      <iframe src="https://player.vimeo.com/video/657145943?h=0ecfb09f05" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <h1></br>Video 2:</br></h1>
+      <iframe src="https://player.vimeo.com/video/657146942?h=8f1fc02546" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> 
+      <h1></br>Video 3:</br></h1>
+      <iframe src="https://player.vimeo.com/video/657147229?h=c50b502e25" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    </section>
+
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>
