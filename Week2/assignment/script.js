@@ -1,5 +1,19 @@
 window.addEventListener('load', function() {
     //hover cards
+    let cards = document.getElementsByClassName('imgs');
+    let texts = document.getElementsByClassName('text');
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('mouseenter', function() {
+            console.log("mouse in", i);
+            texts[i + 1].style.display = "flex";
+        })
+        cards[i].addEventListener('mouseleave', function() {
+            console.log("mouse out");
+            texts[i + 1].style.display = "none";
+        })
+
+    }
 
     //inputs
     let input_name = this.document.getElementById('name');
