@@ -1,61 +1,195 @@
 @media only screen and (min-width: 700px) {
-
-  body {
-    display: flex;
-    flex-direction: column;
-    
-    margin: 3vw;
-    padding: 0;
-    min-height: 100%;
-    
-    background-color: rgb(0, 100, 0);
-    background-image: url("images/bg.jpg");
-    overscroll-behavior-x: none;
-    /* overscroll-behavior-x: none; */
-    overflow-y:hidden;
-  
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-    /* font-family: 'Corben', cursive; */
-  }
-  /* header */
-  header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    min-width: 94vw
-  }
-  header div.title{
-    margin-left: 8vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center
-  }
-  header nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 30vw;
-  }
-  header nav a{
-    
-  }
-  /* page 1 */
-  section.container.titlepage{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-    min-height: 90vh;
-  }
-  div.image img{
-    max-width: 40vw;
-    
-  }
-}  
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 1vw;
+        padding: 0;
+        min-height: 100%;
+        background-color: rgb(0, 50, 0);
+        background-image: url("images/bg.jpg");
+        overscroll-behavior-x: none;
+        /* overflow-y: hidden; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Corben', cursive;
+        color: ivory;
+    }
+    /* ======================== */
+    /* =========header========= */
+    /* ======================== */
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        min-width: 94vw;
+        max-height: 15vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: fixed;
+    }
+    header div.title {
+        margin-left: 8vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    header div.title div.title h1 {
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+    header nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        min-width: 30vw;
+    }
+    header nav a {
+        text-decoration: none;
+        color: ivory;
+    }
+    /* ======================== */
+    /* =========pages ========= */
+    /* ======================== */
+    section.container {
+        min-height: 85vh;
+        padding-top: 15vh;
+        display: flex;
+        flex-direction: column;
+    }
+    section.container div.content {
+        min-height: 70vh;
+    }
+    section.container div.scroll-icon {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        min-height: 15vh;
+    }
+    section.container div.scroll-icon p {
+        margin: 0px;
+        font-size: 3vw;
+        line-height: 2.5vw;
+    }
+    /* ======================== */
+    /* =========page 1========= */
+    /* ======================== */
+    section.container.titlepage div.content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    div.image img {
+        max-width: 40vw;
+        max-height: 40vh;
+    }
+    /* ======================== */
+    /* =========page 2 =========*/
+    /* ======================== */
+    section.container.games {
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+    section.container.games div.content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+    section.container.games div.content div {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    section.container.games div.content div div.img-text {
+        position: relative;
+    }
+    /*  */
+    section.container.games div.content div div.img-text div.imgs {
+        /* max-height: 35vh; */
+        /* display: block; */
+        z-index: 2;
+        position: absolute;
+        max-width: 10vw;
+    }
+    section.container.games div.content div div.img-text div.text {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        position: absolute;
+        width: 10vw;
+        height: 15vw;
+        border-radius: 2vh;
+        background-color: rgba(0, 0, 0, 100);
+    }
+    /*  */
+    section.container.games div.content div div.img-text div.imgs img {
+        max-width: 10vw;
+        max-height: 15vw;
+        border-radius: 2vh;
+    }
+    section.container.games div.content div div.empty {
+        width: 2vw;
+        height: 15vw;
+        ;
+    }
+    section.container.games div.content div div.img-text div.text p {
+        text-align: center;
+        text-overflow: clip;
+        height: 100%;
+        width: 100%;
+    }
+    /* ======================== */
+    /* =========page 3========= */
+    /* ======================== */
+    section.container.suggestions div.content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    section.container.suggestions div.content div.add {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-width: 40vw;
+        max-width: 40vw;
+    }
+    section.container.suggestions div.content div.add lable {
+        font-size: 10vw;
+    }
+    section.container.suggestions div.content div.add input {
+        padding: 8px;
+        display: block;
+        border: none;
+        border: transparent;
+        box-shadow: none;
+        background-color: transparent;
+        border-bottom: 1px solid #fffff0;
+        width: 30vw;
+    }
+    section.container.suggestions div.content div.list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-width: 40vw;
+        max-width: 40vw;
+    }
+}

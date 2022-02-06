@@ -34,9 +34,7 @@ body {
   max-width: 20vw;
   min-width: 20vw;
 
-  display: flex;
   overflow: hidden;
-  flex-direction: column;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
