@@ -22,5 +22,5 @@ With that being said, here is the link to my website.
 
 
 ### Other
-this is a link I found while searching for ideas and I just though I'd share:
+This is a link I found while searching for ideas. I found this link really inspiring and I just though I'd share:
 [_INTERACTIVE WEBSITE_](https://syriastories.arkivert.no/ "_INTERACTIVE WEBSITE_")
