@@ -7,7 +7,8 @@ I had no clue what to do at first. Use and interaction was something I did a lot
 ## Design
 One of the main go tos people have in game nights is the board games or the playing cards, it's a classic. That's why I chose the dice in the first page and the playing cards in the second page. The playing cards are numbered so it made sense to use them for game options. The background made sense to me as it is similar to the texture of a classic poker table. I know this may not be a poker website, but with the cards and the board games, i thought this background would look nice and help the general aesthetic of the website. I used a free share/use licenced image i found online.
 *_What I wrote on the title page may not be the thing you expect to see on a website title page but I was blank, oops_* 
-**here is my wire frame**
+
+**Here is my wire frame**
 ![alt text](https://github.com/fnassar/connectionslab/blob/main/Week2/assignment/images/GameNight.png "Wire Frame")
 
 ## Interaction
