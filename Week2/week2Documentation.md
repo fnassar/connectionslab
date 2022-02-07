@@ -18,7 +18,8 @@ For the suggestions page, it was all firsts; all the way from the CSS to the htm
 
 With that being said, here is the link to my website.
 ### Link:
-[_Week 2_ Website](https://fnassar.github.io/connectionslab/Week1/ProjectDocumentation/index.html/Week2/assignment/index.html "Website link")
+[_Week 2_ Website](https://fnassar.github.io/connectionslab/Week2/assignment/index.html "Website link")
+
 
 ###Other
 this is a link I found while searching for ideas and I just though I'd share:
