@@ -1,17 +1,25 @@
 window.addEventListener('load', function() {
     //hover cards
-    let cards = document.getElementsByClassName('imgs');
+    let cards = document.getElementsByClassName('img');
     let texts = document.getElementsByClassName('text');
 
     for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener('mouseenter', function() {
+        cards[i].onmouseover = e => {
             console.log("mouse in", i);
             texts[i + 1].style.display = "flex";
-        })
-        cards[i].addEventListener('mouseleave', function() {
-            console.log("mouse out");
+        }
+        texts[i + 1].onmouseover = e => {
+            console.log("mouse in", i);
+            texts[i + 1].style.display = "flex";
+        }
+        cards[i].onmouseleave = e => {
+            console.log("mouse out", i + 1);
             texts[i + 1].style.display = "none";
-        })
+        }
+        texts[i + 1].onmouseleave = e => {
+            console.log("mouse out", i + 1);
+            texts[i + 1].style.display = "none";
+        }
 
     }
 

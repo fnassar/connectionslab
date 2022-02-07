@@ -58,6 +58,9 @@
         text-decoration: none;
         color: ivory;
     }
+    header nav a:hover {
+        transform: scale(1.4);
+    }
     /* ======================== */
     /* =========pages ========= */
     /* ======================== */
@@ -132,7 +135,12 @@
         position: absolute;
         max-width: 10vw;
     }
-    section.container.games div.content div div.img-text div.text {
+    section.container.games div.content div div.img-text a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.container.games div.content div div.img-text a div.text {
         display: none;
         justify-content: center;
         align-items: center;
@@ -154,11 +162,15 @@
         height: 15vw;
         ;
     }
-    section.container.games div.content div div.img-text div.text p {
+    section.container.games div.content div div.img-text a div.text p {
+        display: flex;
+        align-self: center;
+        justify-self: center;
         text-align: center;
         text-overflow: clip;
         height: 100%;
         width: 100%;
+        font-size: 1.5vw;
     }
     /* ======================== */
     /* =========page 3========= */
@@ -177,8 +189,8 @@
         min-width: 40vw;
         max-width: 40vw;
     }
-    section.container.suggestions div.content div.add lable {
-        font-size: 10vw;
+    #lable {
+        font-size: 1.5vw;
     }
     section.container.suggestions div.content div.add input {
         padding: 8px;
@@ -189,6 +201,8 @@
         background-color: transparent;
         border-bottom: 1px solid #fffff0;
         width: 30vw;
+        color: #fffff0;
+        font-size: 1.5vw;
     }
     section.container.suggestions div.content div.list {
         display: flex;
@@ -197,5 +211,12 @@
         align-items: flex-start;
         min-width: 40vw;
         max-width: 40vw;
+    }
+    section.container.suggestions div.content div.list ul#list li a {
+        text-decoration: none;
+        color: #fffff0;
+        font-size: 1.5vw;
+        line-height: 1.5vw;
+        ;
     }
 }
