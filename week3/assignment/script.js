@@ -1,13 +1,24 @@
-fetch("https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions", {
+//this has the contry and long/lat locations
+fetch("https://geodatasource-geodatasource-location-search-web-service-v1.p.rapidapi.com/city?key=QR1ZYIDHZJPRHLQOXOJGDR6LZTSEVEZW&lat=10&lng=30", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+            "x-rapidapi-host": "geodatasource-geodatasource-location-search-web-service-v1.p.rapidapi.com",
             "x-rapidapi-key": "6c41fb0e8dmsha569b026441c479p15b86ajsnd0a8cea9e716"
         }
     })
-    .then(response => {
-        console.log(response);
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
     })
     .catch(err => {
         console.error(err);
     });
+//this has the contry and long/lat locations
+
+// P5 Code here
+
+
+
+// Step 1: find API (one or two)
+// longitude/lattitude is 90| and 360_
+// Step 2: start making Wire frame ()
