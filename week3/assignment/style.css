@@ -1,0 +1,79 @@
+@media only screen and (min-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-bottom: 1vw;
+        margin-top: 0px;
+        padding: 0;
+        min-height: 100%;
+        background-color: rgb(0, 50, 0);
+        background-image: url("images/bg.jpg");
+        overscroll-behavior-x: none;
+        /* overflow-y: hidden; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Corben', cursive;
+        color: ivory;
+    }
+    /* ======================== */
+    /* =========header========= */
+    /* ======================== */
+    header {
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        min-width: 94vw;
+        max-height: 15vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-image: url("images/bg.jpg");
+        position: fixed;
+        z-index: 5;
+    }
+    /* ======================== */
+    /* =========pages ========= */
+    /* ======================== */
+    section.container {
+        min-height: 85vh;
+        padding-top: 15vh;
+        display: flex;
+        flex-direction: column;
+    }
+    section.container div.content {
+        min-height: 70vh;
+    }
+    section.container div.scroll-icon {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        min-height: 15vh;
+    }
+    section.container div.scroll-icon p {
+        margin: 0px;
+        font-size: 3vw;
+        line-height: 2.5vw;
+    }
+    /* ======================== */
+    /* =========page 1========= */
+    /* ======================== */
+    section.container div.content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    div.image img {
+        max-width: 40vw;
+        max-height: 40vh;
+    }
+}

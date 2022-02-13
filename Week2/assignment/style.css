@@ -149,7 +149,7 @@
         width: 10vw;
         height: 15vw;
         border-radius: 2vh;
-        background-color: rgba(0, 0, 0, 100);
+        background-color: rgba(0, 0, 0, 0.85);
     }
     /*  */
     section.container.games div.content div div.img-text div.imgs img {
