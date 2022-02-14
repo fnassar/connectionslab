@@ -43,15 +43,36 @@
         min-height: 75vh;
         min-width: 90vw;
         display: flex;
+    }
+    /* ======================== */
+    /* =========static========= */
+    /* ======================== */
+    section.container div.static {
+        min-height: 75vh;
+        min-width: 90vw;
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
     }
-    section.container div.content {
-        /* display: flex;
-        flex-direction: column;
+    section.container div.static div.content {
+        height: 50vh;
+        width: 40vw;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* cursor: pointer; */
+    }
+    /* ======================== */
+    /* =========floating======== */
+    /* ======================== */
+    section.container div.floating {
+        min-height: 75vh;
+        min-width: 90vw;
+        display: flex;
+        flex-direction: row;
         justify-content: space-around;
-        align-items: center; */
+        align-items: center;
+    }
+    section.container div.floating div.content {
         height: 50vh;
         width: 40vw;
         background-color: rgba(0, 0, 0, 0.4);
