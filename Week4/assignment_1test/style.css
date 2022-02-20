@@ -5,7 +5,7 @@
 body {
     background: radial-gradient(#222, #222);
     margin: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
     overscroll-behavior: none;
     display: flex;
     justify-content: center;
@@ -26,14 +26,21 @@ body {
    =================================== */
 
 header {
+    padding-left: 4vw;
+    padding-top: 2vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 4vw;
-    margin-top: 2vh;
-    height: 10vh;
-    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    min-height: 10vh;
+    min-width: 100%;
 }
 
 header div.title {
@@ -64,6 +71,7 @@ section.container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 8vh;
     min-height: 84vh;
     min-width: 94vw;
 }
@@ -81,29 +89,10 @@ section.container {
 #map {
     height: 70vh;
     width: 70vw;
+    z-index: 4;
 }
 
 
 /* ===================================
-   ============= MAP SVG =============
+   ========== Section1 map ===========
    =================================== */
-
-
-/* 
-.countrysvg {
-    fill: rgb(207, 207, 207);
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    stroke-width: 0.71px;
-}
-
-.Layer_1 {
-    height: 100%;
-    margin: auto;
-}
-.worldMap {
-    width: 100vw;
-    height: auto;
-    overscroll-behavior-y: ;
-}
-*/
