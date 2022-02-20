@@ -3,6 +3,7 @@ let locLink, searchLink;
 let lng = 46.8,
     lat = 18.8;
 let city, country;
+let imgs = [];
 locLink = "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?location=" + lat + "%2B" + lng;
 // " + lat + "&lng=" + lng;
 
@@ -19,7 +20,7 @@ window.addEventListener('load', () => {
             // console.log(data);
             country = data.data[0].country.replace(/ /g, "%20");
             city = data.data[0].name.replace(/ /g, "%20");
-            searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + city + "%20" + country + "&pageNumber=1&pageSize=5&autoCorrect=true"
+            searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + city + "%20Landmarks&pageNumber=1&pageSize=5&autoCorrect=true"
                 // console.log(searchLink);
             fetch(searchLink, {
                     "method": "GET",
@@ -37,72 +38,72 @@ window.addEventListener('load', () => {
                     // console.log(data.value[3].url);
                     // console.log(data.value[4].url);
 
-                    let img = document.createElement("img");
-                    img.src = data.value[1].url;
-                    img.alt = "image unavailable."
-                        // console.log(img);
-                    img.style.maxHeight = '100%';
-                    img.style.maxWidth = '100%';
-                    document.getElementById("image").appendChild(img);
-                    let img2 = document.createElement("img");
-                    img2.src = data.value[2].url;
-                    img2.alt = "image unavailable."
-                        // console.log(img2);
-                    img2.style.maxHeight = '100%';
-                    img2.style.maxWidth = '100%';
-                    img2.style.display = 'none';
-                    document.getElementById("image").appendChild(img2);
-                    let img3 = document.createElement("img");
-                    img3.src = data.value[3].url;
-                    img3.alt = "image unavailable."
-                        // console.log(img3);
-                    img3.style.maxHeight = '100%';
-                    img3.style.maxWidth = '100%';
-                    img3.style.display = 'none';
-                    document.getElementById("image").appendChild(img3);
-                    let img4 = document.createElement("img");
-                    img4.src = data.value[4].url;
-                    img4.alt = "image unavailable."
-                        // console.log(img4);
-                    img4.style.maxHeight = '100%';
-                    img4.style.maxWidth = '100%';
-                    img4.style.display = 'none';
-                    document.getElementById("image").appendChild(img4);
+                    imgs.push(document.createElement("img"));
+                    imgs[0].src = data.value[1].url;
+                    imgs[0].alt = "image unavailable."
+                    console.log(imgs[0]);
+                    imgs[0].style.maxHeight = '100%';
+                    imgs[0].style.maxWidth = '100%';
+                    document.getElementById("image").appendChild(imgs[0]);
+                    imgs.push(document.createElement("img"));
+                    imgs[1].src = data.value[2].url;
+                    imgs[1].alt = "image unavailable."
+                    console.log(imgs[1]);
+                    imgs[1].style.maxHeight = '100%';
+                    imgs[1].style.maxWidth = '100%';
+                    // imgs[1].style.display = 'none';
+                    document.getElementById("image").appendChild(imgs[1]);
+                    imgs.push(document.createElement("img"));
+                    imgs[2].src = data.value[3].url;
+                    imgs[2].alt = "image unavailable."
+                    console.log(imgs[2]);
+                    imgs[2].style.maxHeight = '100%';
+                    imgs[2].style.maxWidth = '100%';
+                    // imgs[2].style.display = 'none';
+                    document.getElementById("image").appendChild(imgs[2]);
+                    imgs.push(document.createElement("img"));
+                    imgs[3].src = data.value[4].url;
+                    imgs[3].alt = "image unavailable."
+                    console.log(imgs[3]);
+                    imgs[3].style.maxHeight = '100%';
+                    imgs[3].style.maxWidth = '100%';
+                    // imgs[3].style.display = 'none';
+                    document.getElementById("image").appendChild(imgs[3]);
 
 
                 })
                 .catch(err => {
-                    // console.error(err);
+                    console.error(err);
                 });
 
             // 
         })
         .catch(err => {
-            // console.error(err);
+            console.error(err);
         });
 })
 
-let worldmap = document.getElementById("worldmap");
+// let worldmap = document.getElementById("worldmap");
 
-let canvasWidth = worldmap.cientWidth;
-let canvasHeight = worldmap.clientHeight;
-console.log("canvasWidth: ", canvasWidth, " canvasHeight: ", canvasHeight)
+// let canvasWidth = worldmap.cientWidth;
+// let canvasHeight = worldmap.clientHeight;
+// console.log("canvasWidth: ", canvasWidth, " canvasHeight: ", canvasHeight)
 
-function setup() {
-    //Create the canvas and save it to a variable;
-    const myCanvas = createCanvas(canvasWidth, canvasHeight);
-    //Set the parent of the canvas to an exisitng html element's id value 
-    myCanvas.parent("worldmap");
-    background(220, 40, 50);
-}
+// function setup() {
+//     //Create the canvas and save it to a variable;
+//     const myCanvas = createCanvas(canvasWidth, canvasHeight);
+//     //Set the parent of the canvas to an exisitng html element's id value 
+//     myCanvas.parent("worldmap");
+//     background(220, 40, 50);
+// }
 
-function draw() {
+// function draw() {
 
-}
+// }
 
-function mousePressed() {
-    ellipse(mouseX, mouseY, 30, 30);
-}
+// function mousePressed() {
+//     ellipse(mouseX, mouseY, 30, 30);
+// }
 
 
 

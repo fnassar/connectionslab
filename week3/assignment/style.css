@@ -14,7 +14,7 @@
         background: radial-gradient(rgb(20, 60, 20), rgb(10, 25, 10));
         overscroll-behavior-x: none;
         overscroll-behavior-y: none;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
