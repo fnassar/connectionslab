@@ -26,12 +26,19 @@ window.addEventListener("load", () => {
         //     .openOn(map);
         marker
             .setLatLng(e.latlng)
-            .bindPopup("<b>Hello world!</b><br>I am a popup.")
+            .bindPopup("<a href=#>click for </br> country  </br> details</a>")
+            .openPopup()
             .addTo(map);
         // marker
         //     .bindPopup("<b>Hello world!</b><br>I am a popup.")
         //     .openPopup();
 
+
     }
     map.on('click', onMapClick);
 })
+
+
+
+
+// functions will call ^^
