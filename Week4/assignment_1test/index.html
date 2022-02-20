@@ -8,24 +8,36 @@
     <title>Document</title>
     <!-- Style sheets -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
     <!-- Java Scripts -->
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Fonts -->
 
 </head>
 
 <body>
+    <header>
+        <div class="title" id="title">
+            <h1>WorldMap</h1>
+            <p>A website for map enthusiasts </p>
+        </div>
+    </header>
     <section class="container map_page">
-        <title>
-
-        </title>
-        <div class="worldMap">
+        <div id="map">
 
         </div>
+
     </section>
+    <section class="container map_page">
+        <div id="images">
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
