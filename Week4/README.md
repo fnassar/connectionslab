@@ -42,7 +42,6 @@ I am trying to collect as many details as I can get, so far I have
 - I would like to add a pop up feature if I have time *(Like image zoom kind of thing)*.
 
 ## Website Link
-The current representation of my website is very simple as I am yet to add many steps, p5 was giving me some trouble and it took more time than I expected trying to figure out how to put the sketch inside a div *still trying*.
 [_Week 3_ Update](https://fnassar.github.io/connectionslab/Week4/assignment_1test "Website Current link")
 
 ## Wire frame
