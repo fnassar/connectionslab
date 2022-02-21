@@ -45,5 +45,4 @@ I am trying to collect as many details as I can get, so far I have
 [_Week 3_ Update](https://fnassar.github.io/connectionslab/Week4/assignment_1test "Website Current link")
 
 ## Wire frame
-the wire frame includes the pop up window part as I feel like it is more user friendly to have an almost full screen map than a small half screen one. I also plan on adding it even if I don't have the time before the deadline for project 1.
-![alt text](https://github.com/fnassar/connectionslab/blob/main/Week4\assignment_1test\WorldMapWireframe.jpeg"Wire Frame")
+![alt text](https://github.com/fnassar/connectionslab/blob/main/Week4\assignment_1test\WorldMapWireframe.jpeg "Wire Frame")
