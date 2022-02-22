@@ -45,4 +45,8 @@ I am trying to collect as many details as I can get, so far I have
 [_Week 3_ Update](https://fnassar.github.io/connectionslab/Week4/assignment_1test "Website Current link")
 
 ## Wire frame
+<<<<<<< HEAD
 ![alt text](https://github.com/fnassar/connectionslab/blob/main/Week4\assignment_1test\WorldMapWireframe.jpeg "Wire Frame")
+=======
+![alt text](https://github.com/fnassar/connectionslab/blob/main/Week4/assignment_1test/WorldMapWireframe.jpeg "Wire Frame")
+>>>>>>> bafb2f73f597df0253eb747dee4e2f1acc3e59b4
