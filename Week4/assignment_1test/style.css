@@ -5,7 +5,7 @@
 body {
     background: radial-gradient(#222, #222);
     margin: 0px;
-    /* overflow: hidden; */
+    overflow: hidden;
     overscroll-behavior: none;
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@ p {
    ============= Section =============
    =================================== */
 
-section.container {
+section.container.map {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,5 +94,91 @@ section.container {
 
 
 /* ===================================
-   ========== Section1 map ===========
+   ========= Section2 Other ==========
    =================================== */
+
+section.container.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 8vh;
+    min-height: 84vh;
+    min-width: 94vw;
+}
+
+section.container.content div.details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 70vh;
+    width: 94vw;
+}
+
+section.container.content div.details div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 45vw;
+}
+
+section.container.content div.details div.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    /* "auto" or "thin" */
+    scrollbar-color: #222 #222;
+    /* height: 100%; */
+    /* list-style-type: none;
+    padding: 0px;
+    width: 100%; */
+}
+
+section.container.content div.details div.info ul:hover {
+    scrollbar-color: antiquewhite #222;
+}
+
+.section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+.section::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px #222;
+}
+
+
+/* footer */
+
+footer div.sources {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 13vh;
+    width: 94vw;
+}
+
+footer div.sources h3 {
+    margin: 0px;
+    line-height: 13vh;
+}
+
+footer div.sources div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 13vh;
+    padding-left: 2%;
+    padding-left: 2%;
+}

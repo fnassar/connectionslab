@@ -1,16 +1,18 @@
 let city, country;
 let imgs = [];
-let titles = ["name", "capital", "region", "currency", "iso2", "gdp", "population", "pop_density", "surface_area", "co2_emissions", "pop_growth", "internet_users", "refugees", "tourists", "urban_population", "unemployment", "urban_population_growth", "life_expectancy_female", "life_expectancy_male", "fertility", "threatened_species", "homicide_rate", "infant_mortality", "post_secondary_enrollment_female", "post_secondary_enrollment_male", "primary_school_enrollment_female", "primary_school_enrollment_male", "secondary_school_enrollment_female", "secondary_school_enrollment_male", "exports", "imports", "sex_ratio", "employment_agriculture", "employment_industry", "employment_services", "forested_area", "gdp_growth", "gdp_per_capita"];
+let titles = ["name", "capital", "region", "currency", "population"];
+let titles2 = ["iso2", "gdp", "pop_density", "surface_area", "co2_emissions", "pop_growth", "internet_users", "refugees", "tourists", "urban_population", "unemployment", "urban_population_growth", "life_expectancy_female", "life_expectancy_male", "fertility", "threatened_species", "homicide_rate", "infant_mortality", "post_secondary_enrollment_female", "post_secondary_enrollment_male", "primary_school_enrollment_female", "primary_school_enrollment_male", "secondary_school_enrollment_female", "secondary_school_enrollment_male", "exports", "imports", "sex_ratio", "employment_agriculture", "employment_industry", "employment_services", "forested_area", "gdp_growth", "gdp_per_capita"];
+let details = [];
 let str = "blabla";
 let tag;
 let locLink, searchLink, datalink;
 let lng, lat, sign;
-let imagecounter = 0;
+let flagcounter = 0;
 let done = false;
 
 window.addEventListener("load", () => {
     window.scrollTo({ top: 0 });
-    imagecounter = 0;
+    flagcounter = 0;
     let map = L.map('map').setView([30, 0], 2);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -40,13 +42,13 @@ window.addEventListener("load", () => {
             .openPopup()
             .addTo(map);
 
-        lat = clat;
+        lat = (clat);
         if (clng < 0) {
             sign = "%2D";
-            lng = clng * (-1);
+            lng = (clng);
         } else {
             sign = "%2B"
-            lng = clng;
+            lng = (clng);
         }
         // tag = document.getElementById('tag');
         // tag.addEventListener('click', scrolltolem('content'));
@@ -61,25 +63,23 @@ window.addEventListener("load", () => {
 // functions will call ^^
 
 function scrolltoelem(id) {
-    locLink = "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?location=" + lat + sign + lng;
+    // locLink = "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?location=" + lat + sign + lng;
+    locLink = " https://geocode.maps.co/reverse?lat=" + lat + "&lon=" + sign + lng + "";
     // change mouse shape to load
     document.body.style.cursor = "wait";
     document.getElementById("tag").style.cursor = "wait";
     fetch(locLink, {
             "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-                "x-rapidapi-key": "6c41fb0e8dmsha569b026441c479p15b86ajsnd0a8cea9e716"
-            }
         })
         .then((response) => response.json())
         .then((data) => {
-            if (data.data.length != 0) {
+            console.log(data.address);
+            if (data.address.length != 0) {
                 imgs = [];
                 // fetch required data
-                country = data.data[0].country;
-                city = data.data[0].name;
-                console.log(country);
+                city = data.address.state;
+                country = data.address.country_code;
+                console.log(country, city, id);
                 printdata(country, id);
                 //done with fetches?
             } else {
@@ -126,19 +126,17 @@ function printflag(countryname, id) {
     imgs[0].alt = "country Flag";
     imgs[0].class = "flagimg";
     imgs[0].id = "flagimg";
-    if (imagecounter == 0) {
+    if (flagcounter == 0) {
         document.getElementById("images").appendChild(imgs[0]);
     } else {
         document.getElementById('flagimg').replaceWith(imgs[0]);
     }
     //last step
     scrollfunction(id);
-    imagecounter++;
+    flagcounter++;
 }
 
 function scrollfunction(id) {
-    let seconds = new Date().getTime();
-
     document.body.style.cursor = "default";
     document.getElementById("tag").style.cursor = "pointer";
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -147,4 +145,45 @@ function scrollfunction(id) {
 function printdetails(data) {
     // loop data.titles[i] and add to "info" id div
     // make into new Li tags then append child
+    // debugger;
+    details = [titles.length];
+    let infodiv = document.getElementById('info');
+    infodiv.innerHTML = "";
+    for (let i = 0; i < titles.length; i++) {
+        try {
+            // console.log(titles[i], data[titles[i]]);
+            // det
+            details.push(data[titles[i]]);
+
+            let item = document.createElement('p');
+            item.style.margin = '1vh';
+            if (titles[i] == "currency") {
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]].name + " (" + data[titles[i]].code + ")";
+            } else if (titles[i] == "population") {
+                let num = data[titles[i]].toLocaleString('en-US');
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + num;
+            } else {
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]];
+            }
+            infodiv.appendChild(item);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    let item_more = document.createElement('p');
+    item_more.id = "add";
+    item_more.style.cursor = 'pointer';
+    item_more.style.textDecoration = 'underline';
+    item_more.innerHTML = 'click for extra details about this country';
+    document.getElementById('info').appendChild(item_more);
+    item_more.addEventListener('click', extradetails);
+
 }
+
+
+function extradetails() {
+
+}
+
+
+document.getElementById('scrollup').addEventListener('click', scrolltoelem('mapcontainer'));
