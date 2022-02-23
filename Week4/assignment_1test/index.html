@@ -12,6 +12,8 @@
 
     <!-- Java Scripts -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- iconify -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!-- Fonts -->
 
 </head>
@@ -22,20 +24,30 @@
             <h1>WorldMap</h1>
             <p>A website for map enthusiasts </p>
         </div>
+        <div id="info_tag">
+            <span class="iconify" data-icon="bi:question-circle"></span>
+        </div>
     </header>
     <section class="container map" id="mapcontainer">
         <div id="map">
-
         </div>
 
     </section>
     <section class="container content" id="content">
         <div class="details">
-            <div class="images" id="images">
+            <div class="img" id="img">
+                <div class="images" id="images">
 
+                </div>
+                <div class="arrows" id="arrows">
+                    <span class="iconify" data-icon="ant-design:caret-left-filled"></span>
+                    <span class="iconify" data-icon="ant-design:caret-right-filled"></span>
+                </div>
             </div>
-            <div class="info" id="info">
+            <div class="info">
+                <ul id="info">
 
+                </ul>
             </div>
         </div>
 
@@ -45,13 +57,11 @@
                 <div>
                     <a href="https://api-ninjas.com/api/country">Country Details</a>
                     <a href="https://countryflagsapi.com">Country Flags</a>
-                    <!-- <a href=""> -->
+                    <a href="https://geocode.maps.co/">Geocode</a>
                 </div>
-
-                </a>
             </div>
-            <div id="scrollup">
-                <a href="#">GO BACK TO MAP</a>
+            <div id="scrollup" class="scrollup">
+                <h4>MAP<span class="iconify" data-icon="akar-icons:circle-triangle-up-fill"></span></h4>
             </div>
         </footer>
     </section>
@@ -79,4 +89,38 @@
     https://commons.wikimedia.org/w/api.php?format=json&action=query&generator=geosearch&ggsprimary=all&ggsnamespace=6&ggsradius=500&ggscoord=30.0|31.25&ggslimit=4&prop=imageinfo&iilimit=5&iiprop=url&iiurlwidth=200&iiurlheight=200
 
     API NINJA KEY NPa7JmMWM73DEsQATsWcXg==pZ8jsMNGt6wpukSN
+
+    let MainTitle = document.getElementById('title');
+MainTitle.addEventListener('click', scrolltoelem('mapcontainer'));
+
+let info2 = document.getElementById('info2')
+
+function extradetails() {
+    /*
+    for (let i = 0; i < titles.length; i++) {
+        try {
+            // console.log(titles[i], data[titles[i]]);
+            // det
+            details.push(data[titles[i]]);
+
+            let item = document.createElement('p');
+            item.style.margin = '1vh';
+            if (titles[i] == "currency") {
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]].name + " (" + data[titles[i]].code + ")";
+            } else if (titles[i] == "population") {
+                let num = data[titles[i]].toLocaleString('en-US');
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + num;
+            } else {
+                item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]];
+            }
+            infodiv.appendChild(item);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+     */
+}
+
+let infodiv = document.getElementById('info');
+
  -->

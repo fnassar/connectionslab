@@ -41,7 +41,6 @@ header {
     z-index: 5;
     min-height: 10vh;
     min-width: 100%;
-    border-bottom: 3vh #AAA;
 }
 
 header div.title {
@@ -125,87 +124,58 @@ section.container.content div.details {
     align-items: center;
     justify-content: space-around;
     height: 70vh;
-    width: 90vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    width: 94vw;
 }
 
-section.container.content div.details div.img {
-    /* position: absolute; */
-    height: 60vh;
-    width: 40vw;
-}
-
-section.container.content div.details div.img div.images {
-    position: absolute;
+section.container.content div.details div {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 60vh;
-    width: 40vw;
-}
-
-section.container.content div.details div.img div.images img {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: auto;
-    width: 100%;
-    max-height: 60vh;
-    max-width: 40vw;
-    margin: auto;
-}
-
-section.container.content div.details div.img div.arrows {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    z-index: 3;
     height: 60vh;
-    width: 40vw;
-    font-size: 10vh;
-    color: #222;
-}
-
-section.container.content div.details div.info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 60vh;
-    width: 40vw;
-    max-height: 100%;
+    width: 45vw;
 }
 
 section.container.content div.details div.info ul {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
     overflow-y: scroll;
     scrollbar-width: thin;
     /* "auto" or "thin" */
     scrollbar-color: #222 #222;
-    -o-transition: color .2s ease-out;
-    -ms-transition: color .2s ease-out;
-    -moz-transition: color .2s ease-out;
-    -webkit-transition: color .2s ease-out;
-    /* ...and now override with proper CSS property */
-    transition: color .2s ease-out;
-    height: 70%;
-    list-style-type: none;
-    padding: 0px;
-    width: 100%;
 }
 
-section.container.content div.details div.info ul p {
-    line-height: 2;
-    font-size: 3vh;
+
+/* 
+section.container.content div.details div.info p#add {
+    cursor: pointer;
+    text-decoration: underline;
 }
+section.container.content div.details div.info div#info2 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+} */
 
 section.container.content div.details div.info ul:hover {
     scrollbar-color: antiquewhite #222;
+}
+
+.section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+.section::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px #222;
 }
 
 
@@ -219,7 +189,6 @@ footer {
     padding-left: 5vw;
     padding-right: 5vw;
     width: 84vw;
-    font-size: large;
 }
 
 footer div.sources {
