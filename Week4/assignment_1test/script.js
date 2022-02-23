@@ -1,7 +1,13 @@
 let city, country;
 let imgs = [];
+let imglink;
+let imagediv;
+let imageslidercount = 0;
+let imagecount = 0;
 let titles = ["name", "capital", "region", "currency", "population", "iso2", "gdp", "pop_density", "surface_area", "co2_emissions", "pop_growth", "internet_users", "refugees", "tourists", "urban_population", "unemployment", "urban_population_growth", "life_expectancy_female", "life_expectancy_male", "fertility", "threatened_species", "homicide_rate", "infant_mortality", "post_secondary_enrollment_female", "post_secondary_enrollment_male", "primary_school_enrollment_female", "primary_school_enrollment_male", "secondary_school_enrollment_female", "secondary_school_enrollment_male", "exports", "imports", "sex_ratio", "employment_agriculture", "employment_industry", "employment_services", "forested_area", "gdp_growth", "gdp_per_capita"];
 let details = [];
+let arrows = [];
+let arrowDiv;
 let str = "blabla";
 let tag;
 let locLink, searchLink, datalink;
@@ -10,7 +16,7 @@ let flagcounter = 0;
 let done = false;
 
 window.addEventListener("load", () => {
-    window.scrollTo({ top: 0 });
+    document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     flagcounter = 0;
     let map = L.map('map').setView([30, 0], 2);
 
@@ -29,12 +35,6 @@ window.addEventListener("load", () => {
     function onMapClick(e) {
         clng = e.latlng.lng;
         clat = e.latlng.lat;
-        // call function to get city name
-        // popup
-        //     .setLatLng(e.latlng)
-        //     .setContent("<a href='#content' id='tag'>click for </br> country  </br> details</a>")
-        //     .openOn(map);
-
         marker
             .setLatLng(e.latlng)
             .bindPopup("<a id='tag' href=\"javascript:scrolltoelem('content')\">click for country details</a>")
@@ -42,15 +42,7 @@ window.addEventListener("load", () => {
             .addTo(map);
 
         lat = (clat);
-        if (clng < 0) {
-            sign = "%2D";
-            lng = (clng);
-        } else {
-            sign = "%2B"
-            lng = (clng);
-        }
-        // tag = document.getElementById('tag');
-        // tag.addEventListener('click', scrolltolem('content'));
+        lng = (clng);
 
     }
     map.on('click', onMapClick);
@@ -60,10 +52,49 @@ window.addEventListener("load", () => {
     document.getElementById('title').addEventListener('click', () => {
         document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     });
+
+    imageslider();
+
 })
 
+function imageslider() {
+    debugger;
+    arrows = document.getElementsByClassName('arrow');
+    arrowDiv = document.getElementById('arrows');
+    imagediv = document.getElementById('images');
+    imagediv.addEventListener('mouseover', () => {
+        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.display = "flex";
+    });
+    arrowDiv.addEventListener('mouseover', () => {
+        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.display = "flex";
+    });
+    imagediv.addEventListener('mouseleave', () => {
+        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.display = "none";
+    });
+    arrowDiv.addEventListener('mouseleave', () => {
+        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.display = "none";
+    });
+    arrows[0].addEventListener('click', () => {
+        console.log(imageslidercount);
+        changeImage(-1);
+        console.log(imageslidercount);
+    });
+    arrows[1].addEventListener('click', () => {
+        changeImage(1);
+        console.log(imageslidercount);
+    });
+}
 
 
+function changeImage(num) {
+    console.log(imageslidercount, num);
+    // imgs[imageslidercount].display = "none";
+    // imgs[imageslidercount += num].display = "flex";
+}
 
 // functions will call ^^
 
@@ -78,12 +109,10 @@ function scrolltoelem(id) {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data.address);
             imgs = [];
             // fetch required data
             city = data.address.state;
             country = data.address.country_code;
-            console.log(country, city);
             printdata(country, id, city);
             //done with fetches?
 
@@ -93,7 +122,7 @@ function scrolltoelem(id) {
             document.getElementById("tag").style.cursor = "pointer";
             // add a pop up here
             console.log("not a city");
-            // console.error(err);
+            console.error(err);
         });
 
 }
@@ -111,30 +140,63 @@ function printdata(country, id, city) {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data[0]);
+            // console.log(data[0]);
             printdetails(city, data[0]);
-            printflag(data[0].iso2, id);
+            printflag(data[0].iso2, data[0].name, city, id);
         })
         .catch(err => {
             console.error(err);
         });
 }
 
-function printflag(countryname, id) {
+function printflag(countryid, country, city, id) {
     // "https://countryflagsapi.com"
     imgs.push(document.createElement("img"));
-    imgs[0].src = "https://countryflagsapi.com/png/" + countryname;
+    imgs[0].src = "https://countryflagsapi.com/png/" + countryid;
     imgs[0].alt = "country Flag";
     imgs[0].class = "flagimg";
     imgs[0].id = "flagimg";
     if (flagcounter == 0) {
+
         document.getElementById("images").appendChild(imgs[0]);
     } else {
-        document.getElementById('flagimg').replaceWith(imgs[0]);
+        document.getElementById("images").innerHTML = "";
+        document.getElementById("images").appendChild(imgs[0]);
+
     }
     //last step
     scrollfunction(id);
     flagcounter++;
+    addextraimages(city, country);
+}
+
+function addextraimages(city, country) {
+    searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + city + country + "&pageNumber=1&pageSize=5&autoCorrect=true"
+    fetch(searchLink, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
+                "x-rapidapi-key": "6c41fb0e8dmsha569b026441c479p15b86ajsnd0a8cea9e716"
+            }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            for (let i = 1; i < 6; i++) {
+                imgs.push(document.createElement("img"));
+                imgs[i].src = data.value[0].url;
+                imgs[i].alt = "Images";
+                imgs[i].class = "slides";
+                imgs[i].style.display = "none";
+                document.getElementById("images").appendChild(imgs[i]);
+            }
+
+
+
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
 }
 
 function scrollfunction(id) {
@@ -146,15 +208,12 @@ function scrollfunction(id) {
 function printdetails(city, data) {
     // loop data.titles[i] and add to "info" id div
     // make into new Li tags then append child
-    // debugger;
-    console.log("here");
+    document.getElementById('info').innerHTML = "";
     let item = document.createElement('p');
     item.innerHTML = "<b>Area</b>: " + city;
     document.getElementById('info').appendChild(item);
     for (let i = 0; i < titles.length; i++) {
         try {
-            // console.log(titles[i], data[titles[i]]);
-            // det
             details.push(data[titles[i]]);
             let item = document.createElement('p');
             item.style.margin = '1vh';
@@ -173,10 +232,5 @@ function printdetails(city, data) {
             console.log(error);
         }
     }
-    // let item_more = document.createElement('p');
-    // console.log(document.getElementById('add'));
-    // item_more.style.cursor = 'pointer';
-    // item_more.style.textDecoration = 'underline';
-    // item_more.addEventListener('click', showextradetails(data));
 
 }
