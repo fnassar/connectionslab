@@ -18,6 +18,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Chivo', sans-serif;
 }
 
 
@@ -39,7 +40,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 5;
-    height: 10vh;
+    height: 13vh;
     min-width: 94vw;
     border-bottom: 3vh #AAA;
 }
@@ -62,6 +63,7 @@ header div.title h1,
 p {
     margin: 2%;
     line-height: 1;
+    text-align: center;
 }
 
 header div.empty {
@@ -122,7 +124,7 @@ section.container.map {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 8vh;
+    padding-top: 9vh;
     min-height: 84vh;
     min-width: 94vw;
 }
@@ -293,8 +295,8 @@ footer {
     align-items: center;
     padding-left: 5vw;
     padding-right: 5vw;
-    width: 84vw;
-    font-size: large;
+    width: 90vw;
+    font-size: 2vh;
 }
 
 footer div.sources {
@@ -323,8 +325,15 @@ footer div.sources div {
 
 footer div.sources div a {
     color: antiquewhite;
+    font-family: 'Chivo', sans-serif;
 }
 
 footer div.scrollup {
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    font-size: 3.5vh;
 }

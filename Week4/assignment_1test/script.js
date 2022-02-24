@@ -58,19 +58,15 @@ window.addEventListener("load", () => {
 
 function infobutton() {
     document.getElementById('info_icon').addEventListener('mouseover', () => {
-        console.log("hi");
         document.getElementById('infopopup').style.display = "flex";
     })
     document.getElementById('info_icon').addEventListener('mouseleave', () => {
-        console.log("hi");
         document.getElementById('infopopup').style.display = "none";
     })
     document.getElementById('infopopup').addEventListener('mouseover', () => {
-        console.log("hi");
         document.getElementById('infopopup').style.display = "flex";
     })
     document.getElementById('infopopup').addEventListener('mouseleave', () => {
-        console.log("hi");
         document.getElementById('infopopup').style.display = "none";
     })
 }
@@ -148,7 +144,6 @@ function scrolltoelem(id) {
             document.getElementById('infopopup2').innerHTML = "This is not a city";
             document.getElementById('infopopup2').style.display = "flex";
             window.setTimeout(() => {
-                console.log("hi")
                 document.getElementById('infopopup2').style.transition = "3s ease-out";
                 document.getElementById('infopopup2').style.display = "none";
             }, 2000)
@@ -231,7 +226,6 @@ function addextraimages(city, country) {
                     document.getElementById('infopopup2').style.display = "flex";
                 }, 2000);
                 window.setTimeout(() => {
-                    console.log("hi")
                     document.getElementById('infopopup2').style.transition = "3s ease-out";
                     document.getElementById('infopopup2').style.display = "none";
                 }, 2000)
