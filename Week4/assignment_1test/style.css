@@ -266,9 +266,9 @@ section.overlay2 {
     bottom: 50vh;
     right: 50vw;
     width: auto;
-    height: 7vh;
+    max-height: 5vh;
     z-index: 10;
-    background-color: rgba(40, 40, 40, 0.9);
+    background-color: rgba(46, 1, 1, 0.8);
     border-radius: 10% 8%;
     margin: -7vw;
 }
@@ -279,7 +279,8 @@ section.overlay2 span.popup2 p {
     justify-content: center;
     align-items: center;
     min-width: 10vw;
-    padding: 1vw;
+    padding: 3vw;
+    line-height: 2;
     margin: 0%;
     z-index: 10;
     /* background-color: rgba(40, 40, 40, 0.9); */

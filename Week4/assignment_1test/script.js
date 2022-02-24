@@ -105,9 +105,10 @@ function changeImage(num) {
     imgs[imageslidercount].style.transition = "2s ease";
     if (imageslidercount <= 0) {
         imageslidercount = imgs.length - 1;
-    } else {
-        imageslidercount = (imageslidercount + num) % (imgs.length - 1);
+    } else if (imageslidercount >= 6) {
+        imageslidercount
     }
+    imageslidercount = (imageslidercount + num) % (imgs.length - 1);
     console.log(imgs.length);
     imgs[imageslidercount].style.transition = "2s ease";
     imgs[imageslidercount].style.display = "flex";
@@ -218,21 +219,31 @@ function addextraimages(city, country) {
                     imgs[i].style.display = "none";
                     imgs[i].style.transition = "2s ease";
                     document.getElementById("images").appendChild(imgs[i]);
+                    scrollfunction("content");
                 }
             } else {
+                scrollfunction("content");
                 window.setTimeout(() => {
                     document.getElementById('infopopup2').style.opacity = "100%";
                     document.getElementById('infopopup2').innerHTML = "Sorry, no images were found";
                     document.getElementById('infopopup2').style.display = "flex";
-                }, 2000);
+                }, 3000);
                 window.setTimeout(() => {
                     document.getElementById('infopopup2').style.transition = "3s ease-out";
                     document.getElementById('infopopup2').style.display = "none";
                 }, 2000)
             }
-            scrollfunction("content");
+
         })
         .catch(err => {
+            scrollfunction("content");
+            document.getElementById('infopopup2').style.opacity = "100%";
+            document.getElementById('infopopup2').innerHTML = "Sorry, no images were found";
+            document.getElementById('infopopup2').style.display = "flex";
+            window.setTimeout(() => {
+                // document.getElementById('infopopup2').style.transition = "3s ease-out";
+                document.getElementById('infopopup2').style.display = "none";
+            }, 2000)
             console.error(err);
         });
 
