@@ -39,7 +39,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 5;
-    min-height: 10vh;
+    height: 10vh;
     min-width: 94vw;
     border-bottom: 3vh #AAA;
 }
@@ -64,13 +64,52 @@ p {
     line-height: 1;
 }
 
-header div.empty,
-div.info_tag {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+header div.empty {
     width: 35vw;
     font-size: 3vh;
+    right: auto;
+}
+
+div.info_tag {
+    left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 35vw;
+    font-size: 3vh;
+    z-index: 7;
+    /* position: fixed; */
+}
+
+header div.info_tag div.info_icon {
+    position: fixed;
+    width: auto;
+    text-align: end;
+    margin: 0;
+    cursor: pointer;
+}
+
+section.overlay1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 4vw;
+    height: auto;
+    margin-top: 9vh;
+    z-index: 6;
+    max-width: 25vw;
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 6% 7%;
+}
+
+section.overlay1 span ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 1vw;
 }
 
 
@@ -195,13 +234,13 @@ section.container.content div.details div.info ul {
     overflow-y: scroll;
     scrollbar-width: thin;
     /* "auto" or "thin" */
-    scrollbar-color: #222 #222;
-    -o-transition: color .2s ease-out;
-    -ms-transition: color .2s ease-out;
-    -moz-transition: color .2s ease-out;
-    -webkit-transition: color .2s ease-out;
+    scrollbar-color: rgba(250, 235, 215, 0.4) #222;
+    -o-transition: color .2s ease-in;
+    -ms-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -webkit-transition: color .2s ease-in;
     /* ...and now override with proper CSS property */
-    transition: color .2s ease-out;
+    transition: color .2s ease-in;
     height: 70%;
     list-style-type: none;
     padding: 0px;
@@ -215,6 +254,33 @@ section.container.content div.details div.info ul p {
 
 section.container.content div.details div.info ul:hover {
     scrollbar-color: antiquewhite #222;
+}
+
+section.overlay2 {
+    display: none;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    bottom: 50vh;
+    right: 50vw;
+    width: auto;
+    height: 7vh;
+    z-index: 10;
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 10% 8%;
+    margin: -7vw;
+}
+
+section.overlay2 span.popup2 p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 10vw;
+    padding: 1vw;
+    margin: 0%;
+    z-index: 10;
+    /* background-color: rgba(40, 40, 40, 0.9); */
 }
 
 
@@ -249,7 +315,7 @@ footer div.sources div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: sp;
     height: 13vh;
     padding-left: 2%;
     padding-left: 2%;

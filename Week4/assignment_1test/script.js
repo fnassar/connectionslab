@@ -16,6 +16,7 @@ let flagcounter = 0;
 let done = false;
 
 window.addEventListener("load", () => {
+    document.body.style.cursor = "default";
     document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     flagcounter = 0;
     let map = L.map('map').setView([30, 0], 2);
@@ -46,54 +47,73 @@ window.addEventListener("load", () => {
 
     }
     map.on('click', onMapClick);
+    infobutton();
     document.getElementById('scrollup').addEventListener('click', () => {
         document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     });
     document.getElementById('title').addEventListener('click', () => {
         document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     });
-
-    imageslider();
-
 })
 
+function infobutton() {
+    document.getElementById('info_icon').addEventListener('mouseover', () => {
+        console.log("hi");
+        document.getElementById('infopopup').style.display = "flex";
+    })
+    document.getElementById('info_icon').addEventListener('mouseleave', () => {
+        console.log("hi");
+        document.getElementById('infopopup').style.display = "none";
+    })
+    document.getElementById('infopopup').addEventListener('mouseover', () => {
+        console.log("hi");
+        document.getElementById('infopopup').style.display = "flex";
+    })
+    document.getElementById('infopopup').addEventListener('mouseleave', () => {
+        console.log("hi");
+        document.getElementById('infopopup').style.display = "none";
+    })
+}
+
 function imageslider() {
-    debugger;
     arrows = document.getElementsByClassName('arrow');
     arrowDiv = document.getElementById('arrows');
     imagediv = document.getElementById('images');
     imagediv.addEventListener('mouseover', () => {
-        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "flex";
     });
     arrowDiv.addEventListener('mouseover', () => {
-        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "flex";
     });
     imagediv.addEventListener('mouseleave', () => {
-        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "none";
     });
     arrowDiv.addEventListener('mouseleave', () => {
-        arrowDiv.style.transition = "opacity 10s ease";
+        arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "none";
     });
     arrows[0].addEventListener('click', () => {
-        console.log(imageslidercount);
         changeImage(-1);
-        console.log(imageslidercount);
     });
     arrows[1].addEventListener('click', () => {
         changeImage(1);
-        console.log(imageslidercount);
     });
 }
 
 
 function changeImage(num) {
-    console.log(imageslidercount, num);
-    // imgs[imageslidercount].display = "none";
-    // imgs[imageslidercount += num].display = "flex";
+    imgs[imageslidercount].style.display = "none";
+    imgs[imageslidercount].style.transition = "2s ease";
+    imageslidercount = (imageslidercount + num) % (imgs.length);
+    if (imageslidercount < 0) {
+        imageslidercount = imgs.length - 1;
+    }
+    imgs[imageslidercount].style.transition = "2s ease";
+    imgs[imageslidercount].style.display = "flex";
+
 }
 
 // functions will call ^^
@@ -122,6 +142,13 @@ function scrolltoelem(id) {
             document.getElementById("tag").style.cursor = "pointer";
             // add a pop up here
             console.log("not a city");
+            document.getElementById('infopopup2').style.opacity = "100%";
+            document.getElementById('infopopup2').style.display = "flex";
+            window.setTimeout(() => {
+                console.log("hi")
+                document.getElementById('infopopup2').style.transition = "3s ease-out";
+                document.getElementById('infopopup2').style.display = "none";
+            }, 2000)
             console.error(err);
         });
 
@@ -156,6 +183,7 @@ function printflag(countryid, country, city, id) {
     imgs[0].alt = "country Flag";
     imgs[0].class = "flagimg";
     imgs[0].id = "flagimg";
+    imgs[0].style.transition = "2s ease";
     if (flagcounter == 0) {
 
         document.getElementById("images").appendChild(imgs[0]);
@@ -165,13 +193,17 @@ function printflag(countryid, country, city, id) {
 
     }
     //last step
-    scrollfunction(id);
     flagcounter++;
     addextraimages(city, country);
+    imageslider();
+
+
+
+    scrollfunction(id);
 }
 
 function addextraimages(city, country) {
-    searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + city + country + "&pageNumber=1&pageSize=5&autoCorrect=true"
+    searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + country + city + "&pageNumber=1&pageSize=5&autoCorrect=true"
     fetch(searchLink, {
             "method": "GET",
             "headers": {
@@ -181,17 +213,18 @@ function addextraimages(city, country) {
         })
         .then((response) => response.json())
         .then((data) => {
-            for (let i = 1; i < 6; i++) {
-                imgs.push(document.createElement("img"));
-                imgs[i].src = data.value[0].url;
-                imgs[i].alt = "Images";
-                imgs[i].class = "slides";
-                imgs[i].style.display = "none";
-                document.getElementById("images").appendChild(imgs[i]);
+            console.log(data);
+            if (data.value.length > 0) {
+                for (let i = 1; i < 6; i++) {
+                    imgs.push(document.createElement("img"));
+                    imgs[i].src = data.value[i - 1].url;
+                    imgs[i].alt = "Image unavailable";
+                    imgs[i].class = "slides";
+                    imgs[i].style.display = "none";
+                    imgs[i].style.transition = "2s ease";
+                    document.getElementById("images").appendChild(imgs[i]);
+                }
             }
-
-
-
         })
         .catch(err => {
             console.error(err);
