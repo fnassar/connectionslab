@@ -107,10 +107,12 @@ function imageslider() {
 function changeImage(num) {
     imgs[imageslidercount].style.display = "none";
     imgs[imageslidercount].style.transition = "2s ease";
-    imageslidercount = (imageslidercount + num) % (imgs.length);
-    if (imageslidercount < 0) {
+    if (imageslidercount <= 0) {
         imageslidercount = imgs.length - 1;
+    } else {
+        imageslidercount = (imageslidercount + num) % (imgs.length - 1);
     }
+    console.log(imgs.length);
     imgs[imageslidercount].style.transition = "2s ease";
     imgs[imageslidercount].style.display = "flex";
 
@@ -143,6 +145,7 @@ function scrolltoelem(id) {
             // add a pop up here
             console.log("not a city");
             document.getElementById('infopopup2').style.opacity = "100%";
+            document.getElementById('infopopup2').innerHTML = "This is not a city";
             document.getElementById('infopopup2').style.display = "flex";
             window.setTimeout(() => {
                 console.log("hi")
@@ -197,9 +200,6 @@ function printflag(countryid, country, city, id) {
     addextraimages(city, country);
     imageslider();
 
-
-
-    scrollfunction(id);
 }
 
 function addextraimages(city, country) {
@@ -224,7 +224,19 @@ function addextraimages(city, country) {
                     imgs[i].style.transition = "2s ease";
                     document.getElementById("images").appendChild(imgs[i]);
                 }
+            } else {
+                window.setTimeout(() => {
+                    document.getElementById('infopopup2').style.opacity = "100%";
+                    document.getElementById('infopopup2').innerHTML = "Sorry, no images were found";
+                    document.getElementById('infopopup2').style.display = "flex";
+                }, 2000);
+                window.setTimeout(() => {
+                    console.log("hi")
+                    document.getElementById('infopopup2').style.transition = "3s ease-out";
+                    document.getElementById('infopopup2').style.display = "none";
+                }, 2000)
             }
+            scrollfunction("content");
         })
         .catch(err => {
             console.error(err);
