@@ -261,16 +261,16 @@ section.container.content div.details div.info ul:hover {
 section.overlay2 {
     display: none;
     position: fixed;
-    top: 50vh;
-    left: 50vw;
-    bottom: 50vh;
-    right: 50vw;
-    width: auto;
+    top: 47.5vh;
+    left: 45vw;
+    bottom: auto;
+    right: auto;
+    min-width: 10vw;
     max-height: 5vh;
     z-index: 10;
     background-color: rgba(46, 1, 1, 0.8);
     border-radius: 10% 8%;
-    margin: -7vw;
+    padding: 1vw;
 }
 
 section.overlay2 span.popup2 p {
@@ -279,7 +279,6 @@ section.overlay2 span.popup2 p {
     justify-content: center;
     align-items: center;
     min-width: 10vw;
-    padding: 3vw;
     line-height: 2;
     margin: 0%;
     z-index: 10;
