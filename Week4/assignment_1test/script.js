@@ -199,11 +199,14 @@ function printflag(countryid, country, city, id) {
 }
 
 function addextraimages(city, country) {
-    searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + country + city + "&pageNumber=1&pageSize=5&autoCorrect=true"
+    // data.value[i].contentUrl
+    let tempcountry = country.replace(/ /g, "%20");
+    // searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + country + city + "&pageNumber=1&pageSize=5&autoCorrect=true"
+    searchLink = "https://bing-image-search1.p.rapidapi.com/images/search?q=" + city + "%2C%20" + tempcountry + "&count=5";
     fetch(searchLink, {
             "method": "GET",
             "headers": {
-                "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
+                "x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
                 "x-rapidapi-key": "6c41fb0e8dmsha569b026441c479p15b86ajsnd0a8cea9e716"
             }
         })
@@ -213,7 +216,7 @@ function addextraimages(city, country) {
             if (data.value.length > 0) {
                 for (let i = 1; i < 6; i++) {
                     imgs.push(document.createElement("img"));
-                    imgs[i].src = data.value[i - 1].url;
+                    imgs[i].src = data.value[i - 1].contentUrl;
                     imgs[i].alt = "Image unavailable";
                     imgs[i].class = "slides";
                     imgs[i].style.display = "none";
