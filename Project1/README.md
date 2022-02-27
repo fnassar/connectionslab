@@ -38,11 +38,11 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 
 * I wanted to have static screens without scrolling I knew that from the begining. So I used `overflow:hidden` *CSS* for the body and only allowed scrolling inside the info. `div` where it was needed.
 #### Info. `div`:
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/infodiv2.jpeg" alt="Image not found" width="500">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/infodiv2.jpg" alt="Image not found" width="500">
 
 * I added a *go back up* button as I know the user will want to check the map again, choose a different country 
 
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/goback.jpeg" alt="Image not found" width="500">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/goback.jpg" alt="Image not found" width="500">
 
 * One thing I was sure to do is smooth scrolling on click `document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });`. As scrolling is not allowed, the scrolling, I belive, allows the user to know they is in the same page and facilitates the understanding that they can "go back up". 
 
@@ -82,7 +82,8 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
         });
     ```
     Both errors were the same popup with different texts, look like this:
-    <img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/error1.jpeg" alt="Image not found" width="500">
+    
+    <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/error1.jpg" alt="Image not found" width="700">
 
 3. I also struggled a little with the pop-ups. Even though I did it before, using another `section` for overlay or popups did not come to my mind straight away.
 
@@ -94,10 +95,10 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 
 ## Screenshots
 
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/images5.jpeg" alt="Image not found" width="500">
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/images1.jpeg" alt="Image not found" width="500">
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/images4.jpeg" alt="Image not found" width="500">
-<img src="https://github.com/fnassar/connectionslab/tree/main/Project1/images/images2.jpeg" alt="Image not found" width="500">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images5.jpg" alt="Image not found" width="700">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images1.jpg" alt="Image not found" width="700">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images4.jpg" alt="Image not found" width="700">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images2.jpg" alt="Image not found" width="700">
 
 ## Next Steps
 * Add a title page and clean up whole website
