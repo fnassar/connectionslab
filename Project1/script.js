@@ -184,7 +184,7 @@ function printdata(country, id, city) {
 }
 
 function printflag(countryid, country, city, id) {
-    // "https://countryflagsapi.com"
+    // this has country flags found using country codes
     imgs.push(document.createElement("img"));
     imgs[0].src = "https://countryflagsapi.com/png/" + countryid;
     imgs[0].alt = "country Flag";
@@ -192,24 +192,25 @@ function printflag(countryid, country, city, id) {
     imgs[0].id = "flagimg";
     imgs[0].style.transition = "2s ease";
     if (flagcounter == 0) {
-
+        // displays new flag
         document.getElementById("images").appendChild(imgs[0]);
     } else {
+        // deletes previous flag if user is searching a second country
         document.getElementById("images").innerHTML = "";
         document.getElementById("images").appendChild(imgs[0]);
 
     }
-    //last step
     flagcounter++;
+    // add extra city and country images to array
     addextraimages(city, country);
+    // control image scroll functionality
     imageslider();
 
 }
 
 function addextraimages(city, country) {
-    // data.value[i].contentUrl
+    // uses bing search to find images
     let tempcountry = country.replace(/ /g, "%20");
-    // searchLink = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" + country + city + "&pageNumber=1&pageSize=5&autoCorrect=true"
     searchLink = "https://bing-image-search1.p.rapidapi.com/images/search?q=" + city + "%2C%20" + tempcountry + "&count=5";
     fetch(searchLink, {
             "method": "GET",
@@ -221,6 +222,7 @@ function addextraimages(city, country) {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
+            // if images exist add to array
             if (data.value.length > 0) {
                 for (let i = 1; i < 6; i++) {
                     imgs.push(document.createElement("img"));
@@ -233,6 +235,7 @@ function addextraimages(city, country) {
                     scrollfunction("content");
                 }
             } else {
+                // if images dont exist give error message
                 scrollfunction("content");
                 window.setTimeout(() => {
                     document.getElementById('infopopup2').style.opacity = "100%";
@@ -247,12 +250,12 @@ function addextraimages(city, country) {
 
         })
         .catch(err => {
+            // if any other error occured
             scrollfunction("content");
             document.getElementById('infopopup2').style.opacity = "100%";
-            document.getElementById('infopopup2').innerHTML = "Sorry, no images were found";
+            document.getElementById('infopopup2').innerHTML = "Sorry, Images cannot be displayed";
             document.getElementById('infopopup2').style.display = "flex";
             window.setTimeout(() => {
-                // document.getElementById('infopopup2').style.transition = "3s ease-out";
                 document.getElementById('infopopup2').style.display = "none";
             }, 2000)
             console.error(err);
@@ -260,6 +263,7 @@ function addextraimages(city, country) {
 
 }
 
+// contols scroll from map to info
 function scrollfunction(id) {
     document.body.style.cursor = "default";
     document.getElementById("tag").style.cursor = "pointer";
@@ -267,8 +271,6 @@ function scrollfunction(id) {
 }
 
 function printdetails(city, data) {
-    // loop data.titles[i] and add to "info" id div
-    // make into new Li tags then append child
     document.getElementById('info').innerHTML = "";
     let item = document.createElement('p');
     item.innerHTML = "<b>Area</b>: " + city;
