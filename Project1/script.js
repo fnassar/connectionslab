@@ -15,12 +15,13 @@ let lng, lat, sign;
 let flagcounter = 0;
 let done = false;
 
+// start when window loads
 window.addEventListener("load", () => {
     document.body.style.cursor = "default";
     document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     flagcounter = 0;
     let map = L.map('map').setView([30, 0], 2);
-
+    // calling map
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
@@ -33,6 +34,7 @@ window.addEventListener("load", () => {
     let marker = L.marker();
     let clng, clat;
 
+    // show marker and popup
     function onMapClick(e) {
         clng = e.latlng.lng;
         clat = e.latlng.lat;
@@ -48,6 +50,8 @@ window.addEventListener("load", () => {
     }
     map.on('click', onMapClick);
     infobutton();
+
+    // add scroll up function to title and go back to map button
     document.getElementById('scrollup').addEventListener('click', () => {
         document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });
     });
@@ -56,13 +60,15 @@ window.addEventListener("load", () => {
     });
 })
 
+// function to controle info button fuctionality and user interaction
 function infobutton() {
     document.getElementById('info_icon').addEventListener('mouseover', () => {
         document.getElementById('infopopup').style.display = "flex";
     })
     document.getElementById('info_icon').addEventListener('mouseleave', () => {
-        document.getElementById('infopopup').style.display = "none";
-    })
+            document.getElementById('infopopup').style.display = "none";
+        })
+        // these are so if user cursor goes over info and leaves the button info stays open
     document.getElementById('infopopup').addEventListener('mouseover', () => {
         document.getElementById('infopopup').style.display = "flex";
     })
@@ -71,10 +77,12 @@ function infobutton() {
     })
 }
 
+// this function controls the images so user can navigate between flag and area images
 function imageslider() {
     arrows = document.getElementsByClassName('arrow');
     arrowDiv = document.getElementById('arrows');
     imagediv = document.getElementById('images');
+    // show arrows when user is hovering over image
     imagediv.addEventListener('mouseover', () => {
         arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "flex";
@@ -83,6 +91,7 @@ function imageslider() {
         arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "flex";
     });
+    // hides arrows when user leaves image
     imagediv.addEventListener('mouseleave', () => {
         arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "none";
@@ -91,6 +100,7 @@ function imageslider() {
         arrowDiv.style.transition = "10s ease";
         arrowDiv.style.display = "none";
     });
+    // change image when user click on arrows
     arrows[0].addEventListener('click', () => {
         changeImage(-1);
     });
@@ -99,15 +109,14 @@ function imageslider() {
     });
 }
 
-
+// takes num to either go next or go back on images taken
 function changeImage(num) {
     imgs[imageslidercount].style.display = "none";
     imgs[imageslidercount].style.transition = "2s ease";
     if (imageslidercount <= 0) {
         imageslidercount = imgs.length - 1;
-    } else if (imageslidercount >= 6) {
-        imageslidercount
     }
+    // module to keep image count in requred range
     imageslidercount = (imageslidercount + num) % (imgs.length - 1);
     console.log(imgs.length);
     imgs[imageslidercount].style.transition = "2s ease";
@@ -115,31 +124,31 @@ function changeImage(num) {
 
 }
 
-// functions will call ^^
-
+// this funcion is the main function, it controles all the fetches or calls other fetch functions
 function scrolltoelem(id) {
-    // locLink = "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?location=" + lat + sign + lng;
+    // add longitude and latitude taken from the map to find city and country
     locLink = "https://geocode.maps.co/reverse?lat=" + lat + "&lon=" + lng;
-    // change mouse shape to load
+    // Change mouse shape to load
     document.body.style.cursor = "wait";
     document.getElementById("tag").style.cursor = "wait";
+    // gets city and country names
     fetch(locLink, {
             "method": "GET",
         })
         .then((response) => response.json())
         .then((data) => {
             imgs = [];
-            // fetch required data
             city = data.address.state;
             country = data.address.country_code;
+            // get country data
             printdata(country, id, city);
-            //done with fetches?
 
         })
         .catch(err => {
+            //  restore cursor to default
             document.body.style.cursor = "default";
             document.getElementById("tag").style.cursor = "pointer";
-            // add a pop up here
+            // error a pop up here when user presses an area with no city
             console.log("not a city");
             document.getElementById('infopopup2').style.opacity = "100%";
             document.getElementById('infopopup2').innerHTML = "This is not a city";
@@ -154,10 +163,8 @@ function scrolltoelem(id) {
 }
 
 function printdata(country, id, city) {
-    // let country = countryname.replace(/%20/g, " ");
+    // this one fetches the information about the country
     datalink = "https://api.api-ninjas.com/v1/country?name=";
-    // https://api.api-ninjas.com/v1/country?name=United States
-
     fetch(datalink + country, {
             "method": "GET",
             "headers": {
@@ -166,8 +173,9 @@ function printdata(country, id, city) {
         })
         .then((response) => response.json())
         .then((data) => {
-            // console.log(data[0]);
+            // display country details
             printdetails(city, data[0]);
+            // get country flag and display it
             printflag(data[0].iso2, data[0].name, city, id);
         })
         .catch(err => {

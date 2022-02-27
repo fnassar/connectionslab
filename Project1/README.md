@@ -37,6 +37,7 @@ That however, did not work for 2 main reasons:
 <!-- <img src="www.addwireframeexaplehere.com" alt="Image not found" width="500"/> -->
 
 Then I decided on spliting screen in half as shown in the wire frame bellow. That would have been really hard for the user I think. Having country info, images and map all in one place i think would be too much. the wire frame I had did not have enough space for anything extra with the design I was going for.
+
 ### initial Wireframe:
 <img src="https://github.com/fnassar/connectionslab/blob/main/week3/assignment/images/WorldMap.jpeg" alt="Image not found" width="500"/>
 
@@ -58,6 +59,9 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/goback.jpg" alt="Image not found" width="500">
 
 * One thing I was sure to do is smooth scrolling on click `document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });`. As scrolling is not allowed, the scrolling, I belive, allows the user to know they is in the same page and facilitates the understanding that they can "go back up". 
+
+* I chose a dark grey background with an 'antiquewhite' writing for simplicity. Black and white would be too sharp for the eyes and these colors are generally my favorites.
+* For the font, I opened a couple maps and checked their fonts. I noticed they were sanserif but still professional, so I looked for a sansserif font that I liked.
 
 
 ## Key Challenges and Solutions
