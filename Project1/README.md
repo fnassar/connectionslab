@@ -45,7 +45,7 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 
 <img src="https://github.com/fnassar/connectionslab/blob/main/Week4/assignment_1test/WorldMapWireframe.jpeg" alt="image not found" width="500">
 
-## Production Decisions (code snippets)
+## Production Decisions
 * I decided to split my display screens in 2 as I explained above. 
 
 * I wanted to have static screens without scrolling I knew that from the begining. So I used `overflow:hidden` *CSS* for the body and only allowed scrolling inside the info. `div` where it was needed.
@@ -60,7 +60,7 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 * One thing I was sure to do is smooth scrolling on click `document.getElementById('mapcontainer').scrollIntoView({ behavior: "smooth" });`. As scrolling is not allowed, the scrolling, I belive, allows the user to know they is in the same page and facilitates the understanding that they can "go back up". 
 
 
-## Key Challenges and Solutions (code snippets)
+## Key Challenges and Solutions
 1. I believe the main challenge I had was the fact that the country details took a long time to load.
     * To solve that, I made a scrolling function and called it inside the function where the last group of data is retrieved
     * I also change the cursor to `cursor: wait;` while the data was loading to let the user know that it is loading
