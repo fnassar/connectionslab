@@ -8,12 +8,23 @@
 
 [*Link*](https://github.com/fnassar/connectionslab/tree/main/Project1 "Code") *to Project Codes*
 
-[*Link*](https://fnassar.github.io/connectionslab/Project1/ "website") *to Website*
+[*Link*](https://fnassar.github.io/connectionslab/Project1/ "Code") *to Website*
 
-
-*[*Link*](https://docs.google.com/presentation/d/1B86_KkYeMqkEALCOxLeNqWmHKJpYDZTCzC7j2YYqOXI/edit?usp=sharing "slides") to presentation*
+*link to presentation*
 
 ## Description
+This website is basically a source to browse world countries and easily find information about each country of choice. 
+The steps is where you start with a page that has a map filling the screen. that is where you choose the country with the information you need. 
+
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images5.jpg" alt="Image not found" width="700">
+
+Then as country and area location are chosen, user is led to the second page of the website where they can view images from the location chosen, the country flag and information about said country
+
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images1.jpg" alt="Image not found" width="700">
+
+The user can hover over the question icon on top to view instuctions if needed:
+
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images6.jpg" alt="Image not found" width="700">
 
 ## Inspiration and Thought Process
 I first got the map inspiration from Marta's second week project. I saw it and I thought wow this could go far. At the begining I was considering a map that covers the screen with a picture that changes with country location and have information show on hover. 
@@ -41,7 +52,8 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 #### Info. `div`:
 <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/infodiv2.jpg" alt="Image not found" width="500">
 
-* I added a *go back up* button as I know the user will want to check the map again, choose a different country 
+* I added a *go back up* button as I know the user will want to check the map again, to choose a different country 
+   * *the user can also press on the page title to go back to the map*
 
 <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/goback.jpg" alt="Image not found" width="500">
 
@@ -87,8 +99,6 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
     <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/error1.jpg" alt="Image not found" width="700">
 
 3. I also struggled a little with the pop-ups. Even though I did it before, using another `section` for overlay or popups did not come to my mind straight away.
-
-4. 
 ## Lessons Learned 
 * I think the main lesson learned from this, is that there is a library for everything and creating a map from scratch cannot give a result with nearly good quality.
 * Another main thing is that when making something that is close to an existing platform needs it's own unique thing. *I asked myself a lot why not google maps before I added the extra info. and the flag to the second page.*
@@ -96,8 +106,6 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 
 ## Screenshots
 
-<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images5.jpg" alt="Image not found" width="700">
-<img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images1.jpg" alt="Image not found" width="700">
 <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images4.jpg" alt="Image not found" width="700">
 <img src="https://github.com/fnassar/connectionslab/blob/main/Project1/images/images2.jpg" alt="Image not found" width="700">
 
