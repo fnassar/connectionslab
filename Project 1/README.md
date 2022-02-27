@@ -38,7 +38,7 @@ I also usually prefer simplistic aspects that are easy for the eye and that woul
 
 * I wanted to have static screens without scrolling I knew that from the begining. So I used `overflow:hidden` *CSS* for the body and only allowed scrolling inside the info. `div` where it was needed.
 #### Info. `div`:
-<img src="./images/infodiv2.jpeg" alt="Image not found" width="500">
+<img src="https://github.com/fnassar/connectionslab/blob/main/Project%201/images/infodiv2.jpeg" alt="Image not found" width="500">
 
 * I added a *go back up* button as I know the user will want to check the map again, choose a different country 
 
