@@ -270,6 +270,7 @@ function scrollfunction(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
+// prints the country info in info div
 function printdetails(city, data) {
     document.getElementById('info').innerHTML = "";
     let item = document.createElement('p');
@@ -280,11 +281,15 @@ function printdetails(city, data) {
             details.push(data[titles[i]]);
             let item = document.createElement('p');
             item.style.margin = '1vh';
+            // adapt main data to make more understandable
             if (titles[i] == "name") {
+                // Print country title instead of just "name"
                 item.innerHTML = "<b>Country " + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]];
             } else if (titles[i] == "currency") {
+                // format currency
                 item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + data[titles[i]].name + " (" + data[titles[i]].code + ")";
             } else if (titles[i] == "population") {
+                // make population in unit = 1person
                 let num = data[titles[i]].toLocaleString('en-US') + ",000";
                 item.innerHTML = "<b>" + titles[i].charAt(0).toUpperCase() + titles[i].slice(1) + "</b>: " + num;
             } else {
