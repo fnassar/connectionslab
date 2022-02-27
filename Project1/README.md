@@ -8,9 +8,9 @@
 
 [*Link*](https://github.com/fnassar/connectionslab/tree/main/Project1 "Code") *to Project Codes*
 
-[*Link*](https://fnassar.github.io/connectionslab/Project1/ "Code") *to Website*
+[*Link*](https://fnassar.github.io/connectionslab/Project1/ "website") *to Website*
 
-*link to presentation*
+[*Link*](https://docs.google.com/presentation/d/1B86_KkYeMqkEALCOxLeNqWmHKJpYDZTCzC7j2YYqOXI/edit?usp=sharing "presentation") *to presentation*
 
 ## Description
 This website is basically a source to browse world countries and easily find information about each country of choice. 
