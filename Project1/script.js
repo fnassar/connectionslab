@@ -151,7 +151,7 @@ function scrolltoelem(id) {
             // error a pop up here when user presses an area with no city
             console.log("not a city");
             document.getElementById('infopopup2').style.opacity = "100%";
-            document.getElementById('infopopup2').innerHTML = "This is not a city";
+            document.getElementById('infopopup2').innerHTML = "You are going to drown there";
             document.getElementById('infopopup2').style.display = "flex";
             window.setTimeout(() => {
                 document.getElementById('infopopup2').style.transition = "3s ease-out";
