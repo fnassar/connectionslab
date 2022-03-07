@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0;
+    min-height: 100%;
+    /* grey color for neutrality */
+    background-color: #222;
+    overscroll-behavior-x: none;
+    /* overflow-y: hidden; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Corben', cursive;
+    color: ivory;
+}
+
+
+/* title */
+
+header {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    min-width: 88vw;
+    max-height: 15vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #222;
+    position: fixed;
+    z-index: 5;
+    border-bottom: thin solid antiquewhite;
+    border-color: antiquewhite;
+}
+
+div.title {
+    width: 44vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.title h1 {
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+}
+
+div.title img {
+    width: 3vw;
+    height: auto;
+}
+
+
+/* 
+
+ */
+
+
+/* filter */
+
+div.filter {
+    width: 44vw;
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: flex-end; */
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+
+/* main */
+
+section.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 85vh;
+    margin-top: 15vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    padding: 2vw;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <img src="images/colorwheel.png">
+            <h1>Find your unique combination</h1>
+        </div>
+        <div class="filter">
+            <!-- dropdown box here -->
+            <div class="button" id="button">
+                <p>filter</p>
+                <div>
+                    <a href="javaScript:changeCol('brown')">brown</a>
+                    <a href="javaScript:changeCol('green')">green</a>
+                    <a href="javaScript:changeCol('range')">orange</a>
+                    <a href="javaScript:changeCol('ellow')">yellow</a>
+                    <a href="javaScript:changeCol('l(red')">red</a>
+                    <a href="javaScript:changeCol('(grey')">grey</a>
+                    <a href="javaScript:changeCol('(blue')">blue</a>
+                    <a href="javaScript:changeCol('l(pin')">pin</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="add">
+            <div class="add_col">
+                <form id="add_cols">
+                    <!-- <label for="colors">+</label> -->
+                    <select name="colors" id="colors">
+                        <option value="name">select color</option>
+                    </select>
+                    <!-- add options in js -->
+
+
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
