@@ -20,7 +20,7 @@ What i did so far in the website is:
 ![alt text](https://github.com/fnassar/connectionslab/blob/main/Week6/weekly_asg/public/images/ss5.jpg "Wire Frame")
 ![alt text](https://github.com/fnassar/connectionslab/blob/main/Week6/weekly_asg/public/images/ss2.jpg "Wire Frame")
 ### Link:
-[_Week 2_ Google Drive link]()
+[_Week 2_ Google Drive link](https://drive.google.com/drive/folders/1OmHDgqFHi2-x72qtJTKlMKeJRlTprIKD?usp=sharing)
 
 
 ## Next Steps
