@@ -96,11 +96,11 @@ let colors = {
             "hex": "#00CC99"
         },
         "Carnation Pink": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FFAACC"
         },
         "Cerise": {
-            "main": "pink",
+            "main": "red",
             "hex": "#DD4492"
         },
         "Cerulean": {
@@ -120,7 +120,7 @@ let colors = {
             "hex": "#9ACEEB"
         },
         "Cotton Candy": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FFBCD9"
         },
         "Dandelion": {
@@ -152,7 +152,7 @@ let colors = {
             "hex": "#6DAE81"
         },
         "Fuchsia": {
-            "main": "pink",
+            "main": "red",
             "hex": "#C364C5"
         },
         "Fuzzy Wuzzy": {
@@ -184,7 +184,7 @@ let colors = {
             "hex": "#F0E891"
         },
         "Hot Magenta": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FF1DCE"
         },
         "Inchworm": {
@@ -208,7 +208,7 @@ let colors = {
             "hex": "#FEFE22"
         },
         "Lavender": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FCB4D5"
         },
         "Macaroni and Cheese": {
@@ -216,7 +216,7 @@ let colors = {
             "hex": "#FFBD88"
         },
         "Magenta": {
-            "main": "pink",
+            "main": "red",
             "hex": "#F664AF"
         },
         "Mahogany": {
@@ -236,11 +236,11 @@ let colors = {
             "hex": "#C8385A"
         },
         "Mauvelous": {
-            "main": "pink",
+            "main": "red",
             "hex": "#EF98AA"
         },
         "Melon": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FDBCB4"
         },
         "Midnight Blue": {
@@ -268,7 +268,7 @@ let colors = {
             "hex": "#FF7538"
         },
         "Orchid": {
-            "main": "pink",
+            "main": "red",
             "hex": "#E6A8D7"
         },
         "Outer Space": {
@@ -292,7 +292,7 @@ let colors = {
             "hex": "#C5D0E6"
         },
         "Piggy Pink": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FDDDE6"
         },
         "Pine Green": {
@@ -300,11 +300,11 @@ let colors = {
             "hex": "#158078"
         },
         "Pink Flamingo": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FC74FD"
         },
         "Pink Sherbert": {
-            "main": "pink",
+            "main": "red",
             "hex": "#F78FA7"
         },
         "Plum": {
@@ -332,7 +332,7 @@ let colors = {
             "hex": "#D68A59"
         },
         "Razzle Dazzle Rose": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FF48D0"
         },
         "Razzmatazz": {
@@ -360,7 +360,7 @@ let colors = {
             "hex": "#7851A9"
         },
         "Salmon": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FF9BAA"
         },
         "Scarlet": {
@@ -388,7 +388,7 @@ let colors = {
             "hex": "#45CEA2"
         },
         "Shocking Pink": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FB7EFD"
         },
         "Silver": {
@@ -416,7 +416,7 @@ let colors = {
             "hex": "#FAA76C"
         },
         "Tickle Me Pink": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FC89AC"
         },
         "Timberwolf": {
@@ -444,11 +444,11 @@ let colors = {
             "hex": "#926EAE"
         },
         "Violet Red": {
-            "main": "pink",
+            "main": "red",
             "hex": "#F75394"
         },
         "Vivid Tangerine": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FFA089"
         },
         "Vivid Violet": {
@@ -464,7 +464,7 @@ let colors = {
             "hex": "#A2ADD0"
         },
         "Wild Strawberry": {
-            "main": "pink",
+            "main": "red",
             "hex": "#FF43A4"
         },
         "Wild Watermelon": {
@@ -500,18 +500,20 @@ app.get('/', (req, res) => {
 
 // create filter for colors
 app.get('/colors', (request, response) => {
-    let filter = request.query.ageGreaterThan;
+    let filter = request.query.filter;
     if (filter) {
         colorsFound = {};
-        for (colorName in colors) {
-            let color = colors[colorName];
+        console.log(filter);
+        for (colorName in colors.colors) {
+            let color = colors.colors[colorName];
             if (color.main == filter) {
                 colorsFound[colorName] = color;
             }
         }
         response.json(colorsFound);
+        console.log("here:", colorsFound);
     } else {
-        response.json(colors);
+        response.json(colors.colors);
     }
 })
 

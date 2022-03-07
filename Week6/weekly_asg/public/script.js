@@ -1,39 +1,79 @@
-let colors;
 let colorselect;
-
+let circles = [];
+let collink = "";
+let colors;
+let circlesappend;
 window.addEventListener('load', () => {
-    fetch("/colors")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            colors = data.colors;
-            addOptions();
-            dropdown();
-        })
+    circlesappend = document.getElementById('circles');
+    colorselect = document.getElementById('colors');
+    filter();
+    getobject();
+
 
 })
 
-function addOptions() {
-    colorselect = document.getElementById('colors');
+function getobject() {
+    // console
+    fetch("/colors" + collink)
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data);
 
+            colors = data;
+            addOptions();
+            dropdownColors();
+        })
+}
+
+function addOptions() {
+    colorselect.innerHTML = "";
     for (color in colors) {
         let item = document.createElement('option');
         item.name = color;
         item.value = color;
-        item.innerHTML = "<li>" + color + "</li>";
+        item.id = "value";
+        item.innerHTML = color;
         colorselect.appendChild(item);
     }
 }
 
+function eventHandler(value) {
 
-function dropdown() {
-    colorselect.addEventListener('change', (value) => {
-        console.log(value.target.value);
+    let val = value.target.value;
+    if (circles.length > 4) {
+
+        circles = [];
+        circlesappend.innerHTML = "";
+    }
+    let c = circles.length;
+    circles.push(document.createElement('div'));
+    circles[c].style.backgroundColor = colors[val].hex;
+    circles[c].style.borderRadius = '50%';
+    circles[c].style.width = "10vw";
+    circles[c].style.height = "10vw";
+    circlesappend.appendChild(circles[c]);
+
+}
+
+function dropdownColors() {
+    colorselect.addEventListener('change', eventHandler);
+}
+
+function filter() {
+    let filterButton = document.getElementById('button');
+    let dropdownmenu = document.getElementById('dropdown');
+
+    filterButton.addEventListener('mouseover', () => {
+        dropdownmenu.style.display = "flex";
+    })
+    filterButton.addEventListener('mouseleave', () => {
+        dropdownmenu.style.display = "none";
     })
 }
 
+function changeCol(col) {
+    colorselect.removeEventListener('change', eventHandler)
+    collink = col;
+    getobject();
 
-
-/*
-    
-*/
+}

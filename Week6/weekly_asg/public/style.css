@@ -27,7 +27,7 @@ header {
     padding-left: 6vw;
     padding-right: 6vw;
     min-width: 88vw;
-    max-height: 15vh;
+    height: 10vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -57,34 +57,78 @@ div.title img {
 }
 
 
-/* 
+/* main */
 
- */
+section.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 86vh;
+    margin-top: 10vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    padding: 2vw;
+}
 
 
 /* filter */
 
 div.filter {
     width: 44vw;
+    /* height: 10vh; */
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: flex-end; */
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 2.5vh;
+    /* overflow-y: scroll; */
+}
+
+div.button {
+    cursor: pointer;
+    margin: 0px;
+}
+
+div.button p {
+    line-height: 5vh;
+}
+
+div.dropdown {
+    background-color: rgba(250, 235, 215, 0.4);
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    /* padding-bottom: 2%; */
+    /* overflow-y: scroll; */
+}
+
+div.dropdown a {
+    border-bottom: thin solid black;
+    text-decoration: none;
+    color: #222;
+    padding-left: 45%;
+    padding-right: 45%;
+}
+
+div.add_col {
+    display: flex;
+    align-self: center;
+    /* justify-self: flex-start; */
 }
 
 
-/* main */
+/* colors */
 
-section.main {
+div.circles {
     display: flex;
+    width: 60vw;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
     align-items: center;
-    min-height: 85vh;
-    margin-top: 15vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    padding: 2vw;
 }
