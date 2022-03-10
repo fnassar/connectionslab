@@ -1,7 +1,8 @@
+let createpostdiv = document.getElementById("create__container");
+createpostdiv.style.display = "none";
+
 window.addEventListener('load', () => {
     // hide on start
-    let createpostdiv = document.getElementById("create__container");
-    createpostdiv.style.display = "none";
 
 
     let newPost = document.getElementById("new__button");
@@ -27,7 +28,15 @@ window.addEventListener('load', () => {
         }
 
         let msgObjectJSON = JSON.stringify(data);
-        console.log(data);
+        console.log(msgObjectJSON);
+        fetch('/message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: msgObjectJSON
+            })
+            .then(res => res.json())
+            .then(data => { console.log(data) })
     })
+
 
 })

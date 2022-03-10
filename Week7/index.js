@@ -8,19 +8,20 @@ app.use(express.urlencoded({
 }));
 
 
-
+let posts = [];
 app.use('/', express.static("public"));
 
 app.get('/', (req, res) => {
     res.send("app is listening at localhost:9000");
 });
 
-app.get('/message', (req, res) => {
-    console.log(req.body)
+app.post('/message', (req, res) => {
+    console.log(req.body);
+    posts.push(req.body);
     res.json({ "message": "ok" });
 });
 
 
 app.listen(9000, () => {
-    console.log("app is listening at localhost:9000");
+    console.log("server up at localhost:9000");
 });
