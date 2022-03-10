@@ -16,4 +16,18 @@ window.addEventListener('load', () => {
         }
     })
 
+    let createpostbutton = document.getElementById("create__button");
+    createpostbutton.addEventListener("click", () => {
+        let Pname = document.getElementById("name").value;
+        let Ppost = document.getElementById("post").value;
+
+        let data = {
+            name: Pname,
+            post: Ppost
+        }
+
+        let msgObjectJSON = JSON.stringify(data);
+        console.log(data);
+    })
+
 })
