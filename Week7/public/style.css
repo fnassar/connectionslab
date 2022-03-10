@@ -1,20 +1,14 @@
 body {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    /* margin: 0 auto; */
     background-color: rgb(18, 47, 90);
     overscroll-behavior-x: none;
-    /* overflow-y: hidden; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* font-family: 'Corben', cursive; */
     color: ivory;
     width: 80%;
     margin: 0 auto 0 auto;
-    /* display: flex; */
 }
 
 
@@ -37,10 +31,6 @@ header {
     justify-content: space-around;
     align-items: center;
     height: 5vh;
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: fixed; */
     border-bottom: thin solid ivory;
 }
 
@@ -59,31 +49,55 @@ footer {
     justify-content: space-around;
     align-items: center;
     height: 5vh;
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: fixed; */
-    /* bottom: 0px; */
 }
 
 .post {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5%;
+    margin: 0;
+    padding: 2vw;
+}
+
+.post {
+    margin: auto;
 }
 
 .posts {
     overflow-y: scroll;
 }
 
-h2,
+
+/* h2,
 h3,
 h4,
 h5,
 p {
-    margin: 0 10%;
-}
+    margin: 0 5%;
+} */
 
 .create__container {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 5vh;
+    bottom: 5vh;
+    right: auto;
+    left: auto;
+    height: auto;
+    min-width: 70vw;
+    width: auto;
+    z-index: 10;
+    background-color: rgb(17, 25, 68);
+    border-radius: 5%;
+    padding: 5vw;
+    /* display: none;
+    position: fixed;
+    top: 0;
+    right: 4vw;
+    height: auto;
+    margin-top: 9vh;
+    z-index: 6;
+    max-width: 25vw;
+    background-color: rgba(40, 40, 40, 0.9);
+     */
 }

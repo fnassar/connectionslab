@@ -1,9 +1,7 @@
-let createpostdiv = document.getElementById("create__container");
-createpostdiv.style.display = "none";
-
 window.addEventListener('load', () => {
     // hide on start
-
+    let createpostdiv = document.getElementById("create__container");
+    createpostdiv.style.display = "none";
 
     let newPost = document.getElementById("new__button");
 
@@ -12,8 +10,9 @@ window.addEventListener('load', () => {
         if (createpostdiv.style.display == "flex") {
             createpostdiv.style.display = "none";
         } else {
+            let Pname = document.getElementById("name").value = '';
+            let Ppost = document.getElementById("post").value = '';
             createpostdiv.style.display = "flex";
-
         }
     })
 
@@ -21,6 +20,7 @@ window.addEventListener('load', () => {
     createpostbutton.addEventListener("click", () => {
         let Pname = document.getElementById("name").value;
         let Ppost = document.getElementById("post").value;
+        createpostdiv.style.display = "none";
 
         let data = {
             name: Pname,

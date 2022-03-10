@@ -28,17 +28,6 @@
                     arjfio grejmio fjeijf wejfo wejfo iejfpej fejfjo lsiemo imckwesmcko mco kimeio cmwemco wifkmco ijfmso ifmkldso ifmkd ewfckm lsewo</p>
             </div>
         </div>
-        <!-- Creating new posts -->
-        <section class="create">
-            <div class="create__container" id="create__container">
-                <label for="name">Name :</label>
-                <input type="text" id="name" name="name" class="create__name" required>
-                </br>
-                <label for="post">Post :</label>
-                <input type="text" id="post" name="post" class="create__post" required>
-                <button class="create__button" id="create__button">Post</button>
-            </div>
-        </section>
     </section>
     <footer class="container">
         <img src="up" alt="scrolltotop">
@@ -48,6 +37,18 @@
             <button class="new__button" id="new__button">post__content</button>
         </div>
     </footer>
+
+    <!-- Creating new posts (overlay) -->
+    <section class="create container" id="create__container">
+        <div class="create__container">
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" class="create__name" onfocus=this.value='' required>
+            </br>
+            <label for="post">Post :</label>
+            <input type="text" id="post" name="post" class="create__post" onfocus=this.value='' required>
+            <button class="create__button" id="create__button">Post</button>
+        </div>
+    </section>
 </body>
 
 </html>
