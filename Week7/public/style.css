@@ -1,22 +1,20 @@
 body {
     display: flex;
     flex-direction: column;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    margin-bottom: 1vw;
-    margin-top: 0px;
-    padding: 0;
-    min-height: 100%;
-    background-color: rgb(0, 50, 0);
-    background-image: url("images/bg.jpg");
+    min-height: 100vh;
+    /* margin: 0 auto; */
+    background-color: rgb(18, 47, 90);
     overscroll-behavior-x: none;
     /* overflow-y: hidden; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Corben', cursive;
+    /* font-family: 'Corben', cursive; */
     color: ivory;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    /* display: flex; */
 }
 
 
@@ -24,17 +22,68 @@ body {
    =========header========= 
    ======================== */
 
-header {
-    margin: 0px;
+.container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
+}
+
+.empty {
+    height: 5vh;
+}
+
+header {
     flex-direction: row;
-    justify-content: space-between;
-    min-width: 94vw;
-    max-height: 15vh;
-    background-repeat: no-repeat;
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-image: url("images/bg.jpg");
-    position: fixed;
-    z-index: 5;
+    position: fixed; */
+    border-bottom: thin solid ivory;
+}
+
+.main {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 3vh;
+}
+
+footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed; */
+    /* bottom: 0px; */
+}
+
+.post {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5%;
+}
+
+.posts {
+    overflow-y: scroll;
+}
+
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0 10%;
+}
+
+.create__container {
+    display: flex;
+    flex-direction: column;
 }

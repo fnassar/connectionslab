@@ -6,24 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connector</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <img src="#" alt="img">
-        <h2>Connector</h2>
+    <header class="container">
+        <span class="header iconify" data-icon="fluent:plug-connected-20-filled"></span>
+        <h2 class="header">Connector</h2>
     </header>
-    <main>
-        <div class="post">
-            <h3>name</h3>
-            <h5>date</h5>
-            <p>aejgno esio arjfio grejmio fjeijf wejfo wejfo iejfpej fejfjo lsiemo imckwesmcko mco kimeio cmwemco wifkmco ijfmso ifmkldso ifmkd ewfckm lsewo ifkclo efwijmewo kmcfjjdsmo ewimclweo ifjmcwlko fcmjfmwao fjfwia fjeipeu iarjifo sk aejgno esio arjfio
-                grejmio fjeijf wejfo wejfo iejfpej fejfjo lsiemo imckwesmcko mco kimeio cmwemco wifkmco ijfmso ifmkldso ifmkd ewfckm lsewo</p>
+    <section class="main container">
+        <div class="empty">&nbsp</div>
+        <!--  posts -->
+        <div class="posts">
+            <div class="post">
+                <h3>name</h3>
+                <h5>date</h5>
+                <p>aejgno esio arjfio grejmio fjeijf wejfo wejfo iejfpej fejfjo lsiemo imckwesmcko mco kimeio cmwemco wifkmco ijfmso ifmkldso ifmkd ewfckm lsewo ifkclo efwijmewo kmcfjjdsmo ewimclweo ifjmcwlko fcmjfmwao fjfwia fjeipeu iarjifo sk aejgno esio
+                    arjfio grejmio fjeijf wejfo wejfo iejfpej fejfjo lsiemo imckwesmcko mco kimeio cmwemco wifkmco ijfmso ifmkldso ifmkd ewfckm lsewo</p>
+            </div>
         </div>
-    </main>
-    <footer>
+        <!-- Creating new posts -->
+        <section class="create">
+            <div class="create__container" id="create__container">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" class="create__name" required>
+                </br>
+                <label for="post">Post :</label>
+                <input type="text" id="post" name="post" class="create__post" required>
+                <button class="create__button" id="create__button">Post</button>
+            </div>
+        </section>
+    </section>
+    <footer class="container">
         <img src="up" alt="scrolltotop">
-        <span>new post</span>
+        <!-- <span>new post</span> -->
+
+        <div class="new">
+            <button class="new__button" id="new__button">post__content</button>
+        </div>
     </footer>
 </body>
 
