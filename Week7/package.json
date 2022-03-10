@@ -1,16 +1,15 @@
 {
-    "name": "weekly_asg",
+    "name": "week7",
     "version": "1.0.0",
-    "description": "colors",
+    "description": "",
     "main": "index.js",
     "scripts": {
         "start": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Nassar",
+    "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.3",
-        "node-fetch": "^3.2.1"
+        "express": "^4.17.3"
     }
 }
