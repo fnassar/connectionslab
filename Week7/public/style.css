@@ -88,7 +88,7 @@ p {
     width: auto;
     z-index: 10;
     background-color: rgb(17, 25, 68);
-    border-radius: 5%;
+    border-radius: 0 0 5vw 5vw;
     padding: 5vw;
     /* display: none;
     position: fixed;

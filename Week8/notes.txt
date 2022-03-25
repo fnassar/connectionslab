@@ -1,0 +1,239 @@
+STEPS :
+1) go to folder -> npm init
+2) add script in package.json -> "start" : "nodemon index.js"
+3) create index.js in the root folder
+4) install npm packages express and socket.io
+'''
+npm install -s express
+npm install -s socket.io
+'''
+5) Created a public folder with index.html
+6) Set up the server so that it can server the public folder
+//in index.js
+let express = require('express');
+let app = express();
+app.use('/', express.static('public'));
+
+7) Make sure to include http server
+'''
+let express = require('express');
+let http = require('http');
+
+let app = express();
+let server = http.createServer(app);
+
+app.use('/', express.static('public'));
+
+server.listen(8800, () => {
+  console.log("server is up and running")
+})
+'''
+
+8) In the client side - include the p5.js libraries, and include an app.js file.
+'''
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+'''
+
+
+----- INCLUDE SOCKETS -----
+1) Require the socket package
+let io = require('socket.io');
+
+2) Wrap sockets around the http server
+io = new io.Server(server); // use socket.io on the http app
+
+3) in the server check for socket connection
+//sockets
+io.sockets.on('connection', (socket) => {
+  console.log("we have a new client: ", socket.id);
+})
+
+4) in client, tell it to connect to the server via sockets
+	a) add the library to index.html
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  b) write the code in js
+  
+  // opens and connect to socket
+let socket = io();
+
+//listen for confirmation
+socket.on('connect', () => {
+    console.log("client connected via sockets");
+})
+
+- Add a disconnect function on the server so that you know when the sockets disconnect
+- in the client side, write a function to draw on mouse dragged
+- within the mouse drag function emit the mousePos information with the label mousePositionData
+//emit information of mouse positon everytime i move mouse
+function mouseDragged() {
+  ellipse(mouseX, mouseY, 10,10);
+  let mousePos = {x: mouseX, y:mouseY};
+  //emit this information to the server
+  socket.emit('mousePositionData', mousePos);
+}
+- in the server, get the information within the socket connections
+//listen for a message from this client
+  socket.on('mousePositionData', (data) => {
+    console.log(data);
+  })
+- now, the server has to send this information to ALL the clients. this has to be done WITHIN the socket.oin in the server
+io.sockets.emit('mouseDataFromServer', data);
+- the client on reciving this data has to draw an ellipse
+so within setup,
+ socket.on('mouseDataFromServer', (data)=> {
+    drawEllipseWithData(data);
+  })
+
+here is the function defn - 
+function drawEllipseWithData(data) {
+  fill(255,0,0);
+  ellipse(data.x, data.y, 10,10);
+}
+
+
+when you upload on glitch
+make sure to change nodemon to node
+make sure to add a variable port
+
+let port = process.env.PORT || 3000;
+server.listen(port, () => {
+    console.log("Server listening at port: " + port);
+});
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+
+ 
+ 
+ 
+ db.find({}).sort({ planet: -1 }).exec(function (err, docs) {
+    console.log(docs);
+		dataToSend = {data: docs};
+    res.json(dataToSend);
+  });
+
+
+
+
+
+
+fetch('/message', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: msgObjectJSON
+    })
+    .then(res => res.json())
+    .then(data => {  console.log(data )})
+
+
+
+
+
+
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+
+
+
+<label for="name">Name :</label>
+<input type="text" id="name" name="name" <body>
+
+
+
+
+  <!-- HEader -->
+  <header class="header container">
+    <img src="https://placekitten.com/100/100"/>
+    <h1>Connecter</h1>
+  </header>
+
+  <!-- Feed of posts -->
+  <section class="container">
+    <ul class="posts">
+      <li class="post">
+        <h2 class="post__person">XYZ</h2>
+        <h3 class="post__time">Date | Time</h3>
+        <p class="post__content">This is the actual post, things I want to say</p>
+      </li>
+    </ul>
+  </section>
+  
+  <!-- Button to add a new post -->
+  <section class="container">
+    <div class="new">
+      <button class="new__button" id="new__button">post__content</button>
+    </div>
+  </section>
+
+  <!-- Creating new posts -->
+  <section class="create">
+    <div class="create__container">
+      <label for="name">Name :</label>
+      <input type="text" id="name" name="name" class="create__name" required> 
+      <label for="post">Post :</label>
+      <input type="text" id="post" name="post" class="create__post" required> 
+      <button class="create__button" id="create__button">Post</button>
+    </div>
+  </section>
+  
+</body> required> 
+
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: bisque;
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.header {
+  height: 10vh;
+}
+
+.posts {
+  height: 90vh;
+}
+
+.new {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vh;
+}
+
+.new__button {
+  height: 5vh;
+}
+
+
+
+console.log("hello");
+window.addEventListener("load", ()=> {
+
+  //hide the pop over on start
+  let createPostDiv = document.getElementById("create__container");
+  createPostDiv.style.display = "none";
+
+  let newPostButton = document.getElementById("new__button");
+  newPostButton.addEventListener("click", () => {
+    console.log("button clicked");
+    if(createPostDiv.style.display == "flex") {
+      createPostDiv.style.display = "none";
+    } else {
+      createPostDiv.style.display = "flex"
+    }
+  })
+})
