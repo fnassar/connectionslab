@@ -26,25 +26,28 @@ app.use('/', express.static("public"));
 
 
 app.post('/message', (req, res) => {
-    console.log(req.body);
+    // here we add new stuff to the db
     db.insert(req.body, (err, newDoc) => {
-        // console.log(newDoc);
+        console.log(newDoc.json);
     });
     res.json({ "message": "ok" });
 });
 
 app.get('/message', (req, res) => {
     let dataToSend = {};
-    db.find({}, function(err, docs) {
-        console.log(docs);
+    // this is what we see at the front end when we fetch
+    db.find({}).sort({ createdAt: 1 }).exec(function(err, docs) {
+        // console.log(docs);
         dataToSend = { data: docs };
-        res.json(dataToSend);
+        console.log(dataToSend);
+        res.json({ dataToSend });
     });
 })
 
-
-
-
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
 
 app.listen(9000, () => {
