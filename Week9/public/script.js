@@ -12,6 +12,13 @@ window.addEventListener('load', () => {
         let name = document.getElementById('name-input').value;
         let msg = document.getElementById('msg-input').value;
         console.log(name, msg);
+
+        chatObj = {
+            'name': name,
+            'msg': msg
+        }
+
+        socket.emit('chatMessage', chatObj);
     })
 
 })

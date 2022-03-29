@@ -18,6 +18,8 @@ io.sockets.on('connect', (socket) => {
     socket.on('disconnect', () => {
         console.log("client: ", socket.id, "is disconnected");
     })
+
+    sockets.on('chatMessage')
 })
 
 //run the createServer
