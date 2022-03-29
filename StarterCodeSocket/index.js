@@ -1,11 +1,20 @@
+//Initialize the express 'app' object
 let express = require('express');
-let http = require('http');
 let app = express();
-let server = http.createServer(app); // create http server
-
-// 
 app.use('/', express.static('public'));
 
-server.listen(8800, () => {
-    console.log("server running at localHost:8800");
-})
+//Initialize the actual HTTP server
+let http = require('http');
+let server = http.createServer(app);
+
+//Initialize socket.io
+//Initialize socket.io
+let io = require('socket.io');
+io = new io.Server(server);
+
+
+//run the createServer
+let port = process.env.PORT || 4000;
+server.listen(port, () => {
+    console.log("Server listening at port: " + port);
+});

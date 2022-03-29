@@ -1,7 +1,7 @@
 {
     "name": "week8",
     "version": "1.0.0",
-    "description": "Sockets",
+    "description": "Sockets2 chat box",
     "main": "index.js",
     "scripts": {
         "start": "nodemon index.js",
