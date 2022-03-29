@@ -36,7 +36,7 @@ app.post('/message', (req, res) => {
 app.get('/message', (req, res) => {
     let dataToSend = {};
     // this is what we see at the front end when we fetch
-    db.find({}).sort({ createdAt: 1 }).exec(function(err, docs) {
+    db.find({}).sort({ createdAt: -1 }).exec(function(err, docs) {
         // console.log(docs);
         dataToSend = { data: docs };
         console.log(dataToSend);
