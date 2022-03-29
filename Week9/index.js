@@ -15,6 +15,9 @@ io = new io.Server(server);
 // connect to server
 io.sockets.on('connect', (socket) => {
     console.log("we have a new client: ", socket.id);
+    socket.on('disconnect', () => {
+        console.log("client: ", socket.id, "is disconnected");
+    })
 })
 
 //run the createServer
