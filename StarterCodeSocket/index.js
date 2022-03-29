@@ -1,4 +1,3 @@
-//Initialize the express 'app' object
 let express = require('express');
 let app = express();
 app.use('/', express.static('public'));
@@ -12,6 +11,10 @@ let server = http.createServer(app);
 let io = require('socket.io');
 io = new io.Server(server);
 
+// connect to server
+io.sockets.on('connect', (socket) => {
+    console.log("we have a new client: ", socket.id);
+})
 
 //run the createServer
 let port = process.env.PORT || 4000;

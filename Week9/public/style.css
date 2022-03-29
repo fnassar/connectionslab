@@ -53,7 +53,7 @@ button {
 
 .chat-box {
     border: 2px solid black;
-    height: 300px;
+    height: 80vh;
     padding-left: 5px;
     overflow: auto;
 }
