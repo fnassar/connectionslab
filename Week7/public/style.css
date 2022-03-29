@@ -54,12 +54,14 @@ footer {
 .post {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5%;
-    margin: 0;
     padding: 2vw;
+    margin: 1vh 0 1vh 0;
 }
 
-.post {
-    margin: auto;
+.post h3,
+h5,
+p {
+    margin: 1vh 0 1vh 0;
 }
 
 .posts {
