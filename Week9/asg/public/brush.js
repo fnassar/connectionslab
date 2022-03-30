@@ -23,9 +23,58 @@ function brush1(data) {
         noStroke();
         ellipse(0, 0, ellipseSize, ellipseSize);
         resetMatrix();
-        // console.log("1:", x, y, data.x, data.y);
         x = x + Math.cos(angle) * stepSize;
         y = y + Math.sin(angle) * stepSize;
-        // console.log("2:", x, y, data.x, data.y);
+    }
+}
+
+
+function brush2(data) {
+    let angle;
+    x = data.x2;
+    y = data.y2;
+    let d = dist(x, y, data.x, data.y)
+    d = constrain(d, 60, 7000);
+
+    if (d > stepSize) {
+
+    }
+}
+
+
+function brush3(data) {
+    let angle;
+    x = data.x2;
+    y = data.y2;
+    let d = dist(x, y, data.x, data.y)
+    d = constrain(d, 60, 7000);
+
+    if (d > stepSize) {
+
+    }
+}
+
+
+function brush4(data) {
+    let angle;
+    x = data.x2;
+    y = data.y2;
+    let d = dist(x, y, data.x, data.y)
+    d = constrain(d, 60, 7000);
+
+    if (d > stepSize) {
+
+    }
+}
+
+function brush5(data) {
+    let angle;
+    x = data.x2;
+    y = data.y2;
+    let d = dist(x, y, data.x, data.y)
+    d = constrain(d, 60, 7000);
+
+    if (d > stepSize) {
+
     }
 }

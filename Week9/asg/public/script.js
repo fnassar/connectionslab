@@ -32,8 +32,23 @@ function setup() {
 
     background(220);
     socket.on('mouseDataFromServer', (data) => {
-        brush1(data);
         innerBrush = brush;
+        switch (data.brush) {
+            case 2:
+                brush2(data);
+                break;
+            case 3:
+                brush3(data);
+                break;
+            case 4:
+                brush4(data);
+                break;
+            case 5:
+                brush5(data);
+                break;
+            default:
+                brush1(data);
+        }
     })
     colorr = { r: (Math.random() * 255), g: (Math.random() * 255), b: (Math.random() * 255) };
     socket.on('deleteClient', (data) => {
