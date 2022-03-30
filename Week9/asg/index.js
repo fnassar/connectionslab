@@ -11,16 +11,20 @@ let app = express();
 let server = http.createServer(app); // wrap express app with http
 io = new io.Server(server); // use socket.io on the http app
 
+let userCount = 0;
 // start server comunication?
 app.use('/', express.static('public'));
 
 // 
 io.sockets.on('connection', (socket) => {
+    userCount++;
     console.log("we have a new client: ", socket.id);
-    io.sockets.emit('addclient', socket.id);
+    // userCount++;
+    io.sockets.emit('addclient', userCount);
     socket.on('disconnect', () => {
         console.log("client: ", socket.id, "is disconnected");
-        io.sockets.emit('deleteClient', socket.id);
+        userCount--;
+        io.sockets.emit('deleteClient', userCount);
     })
 
     socket.on('mousePosData', (data) => {

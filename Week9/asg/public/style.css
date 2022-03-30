@@ -61,8 +61,8 @@ div {
 }
 
 .containter_users {
-    padding: 0 2vh;
-    height: 80vh;
+    padding: 0 2vh 5vh 2vh;
+    height: 75vh;
     width: 10vw;
     display: flex;
     flex-direction: column;
@@ -93,4 +93,12 @@ h3 {
     width: 8vw;
     border-radius: 50%;
     list-style: none;
+}
+
+#changeCol {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    background-color: #222;
+    color: antiquewhite;
 }

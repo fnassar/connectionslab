@@ -12,6 +12,8 @@ let brush = 1;
 let innerBrush;
 
 
+
+
 window.addEventListener('load', () => {
     socket.on('connect', () => {
         console.log("client connected via sockets");
@@ -22,6 +24,12 @@ window.addEventListener('load', () => {
             brush = i + 1;
         })
     }
+    let changeCol = document.getElementById('changeCol');
+    changeCol.addEventListener('click', () => {
+        colorr = { r: (Math.random() * 255), g: (Math.random() * 255), b: (Math.random() * 255) };
+        console.log('bla');
+    })
+
 })
 
 // P5 Code
@@ -52,11 +60,18 @@ function setup() {
     })
     colorr = { r: (Math.random() * 255), g: (Math.random() * 255), b: (Math.random() * 255) };
     socket.on('deleteClient', (data) => {
-        console.log("deleted", data);
+        changeUserCount(data);
+        // console.log("deleted", data);
     })
     socket.on('addclient', (data) => {
-        console.log("added", data);
+        changeUserCount(data);
+        // console.log("added", data);
     })
+}
+
+function changeUserCount(data) {
+    let userss = document.getElementById('content_users');
+    userss.innerHTML = (data + ' Users');
 }
 
 function draw() {
