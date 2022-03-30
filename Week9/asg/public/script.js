@@ -33,7 +33,7 @@ function setup() {
     background(220);
     socket.on('mouseDataFromServer', (data) => {
         innerBrush = brush;
-        switch (data.brush) {
+        switch (data.b) {
             case 2:
                 brush2(data);
                 break;
