@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script src="brush.js"></script>
     <!-- socket lib -->
 
     <!-- stylesheets -->
@@ -37,13 +39,18 @@
         <div class="containter_canvas" id="containter_canvas">
         </div>
         <div class="containter_users" id="containter_users">
-            <h3>Online Users</h3>
-            <ul>
-                <li class="content_users" id="content_users">first</li>
-            </ul>
+            <div>
+                <h3>Online Users</h3>
+                <ul>
+                    <li class="content_users" id="content_users">first</li>
+                </ul>
+            </div>
+            <div>
+                <button>Change Color</button>
+            </div>
+
         </div>
     </main>
-    <script src="brush.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -8,7 +8,8 @@ let colorr;
 let x = 0;
 let y = 0;
 
-let brush;
+let brush = 1;
+let innerBrush;
 
 
 window.addEventListener('load', () => {
@@ -16,7 +17,11 @@ window.addEventListener('load', () => {
         console.log("client connected via sockets");
     })
     let brushes = document.getElementsByClassName('content_brushes');
-    for (let i = 0; i < brushes.length; i++) {}
+    for (let i = 0; i < brushes.length; i++) {
+        brushes[i].addEventListener('click', () => {
+            brush = i + 1;
+        })
+    }
 })
 
 // P5 Code
@@ -27,10 +32,8 @@ function setup() {
 
     background(220);
     socket.on('mouseDataFromServer', (data) => {
-        // console.log(data);
-        drawWithData(data);
-        // x = data.x;
-        // y = data.y;
+        brush1(data);
+        innerBrush = brush;
     })
     colorr = { r: (Math.random() * 255), g: (Math.random() * 255), b: (Math.random() * 255) };
     socket.on('deleteClient', (data) => {
@@ -51,37 +54,19 @@ function mousePressed() {
 }
 // emit mouse position when mouse moves
 function mouseDragged() {
-    let passedData = { x: round(mouseX), y: round(mouseY), c: colorr, x2: x, y2: y, b: brush };
+    let passedData = { x: round(mouseX), y: round(mouseY), c: colorr, x2: x, y2: y, b: innerBrush };
 
     socket.emit('mousePosData', passedData); // GOLD !!IMPORTANT
 }
 
 
 
-function drawWithData(data) {
-    let angle;
-    x = data.x2;
-    y = data.y2;
-    // if (mouseIsPressed) {
-    let d = dist(x, y, data.x, data.y)
-    d = constrain(d, 60, 7000);
+// next steps:
+/*
+    - create different brushes
+    - make caseof in socket.on('mouseDataFromServer') and call different functions for different brushes
+    - make list of users and display whole list on load
+    - delete/add users as they come in and go
+    - add a change color(random) button in last div(people one flex-self end)
 
-    if (d > stepSize) {
-        // console.log('bla');
-        // gets the angle between the mouse and the location of the brush so that next point is drawn in the right intended location
-        angle = Math.atan2(data.y - y, data.x - x);
-        ellipseSize = ellipseSizeMin * 60 / d;
-        fill(data.c.r, data.c.g, data.c.b);
-        applyMatrix();
-        translate(x, y);
-        rotate(angle);
-        noStroke();
-        ellipse(0, 0, ellipseSize, ellipseSize);
-        resetMatrix();
-        // console.log("1:", x, y, data.x, data.y);
-        x = x + Math.cos(angle) * stepSize;
-        y = y + Math.sin(angle) * stepSize;
-        // console.log("2:", x, y, data.x, data.y);
-    }
-    // }
-}
+*/
