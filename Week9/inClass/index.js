@@ -16,15 +16,21 @@ let messages = [];
 // connect to server
 io.sockets.on('connect', (socket) => {
     console.log("we have a new client: ", socket.id);
+
+    // socket.name = data.name;
+    // socket.roomname = data.room;
+
+    // socket.join(socket.roomname)
+
     let data = { oldMessages: messages };
-    socket.emit('pastMessages', data);
+    socket.to(socket.roomname).emit('pastMessages', data);
     socket.on('disconnect', () => {
         console.log("client: ", socket.id, "is disconnected");
     })
     socket.on('chatMessage', (data) => {
         messages.push(data);
         console.log(messages);
-        io.sockets.emit('chatMessage', data);
+        io.socket.to(socket.roomname).emit('chatMessage', data);
 
     })
 

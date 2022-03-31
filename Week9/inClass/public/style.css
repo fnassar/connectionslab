@@ -58,7 +58,8 @@ button {
     overflow: auto;
 }
 
-.chat-box-msg1 {}
+
+/* .chat-box-msg1 {} */
 
 p {
     overflow-wrap: break-word;

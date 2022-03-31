@@ -3,6 +3,11 @@ let chatBox = document.getElementById('chat-box-msg1');
 socket.on('connect', () => {
         console.log("client connected via sockets");
 
+        let data = {
+            "name": sessionStorage.getItem('name'),
+            "room": sessionStorage.getItem('room')
+        }
+        socket.emit('userData', data);
     })
     // recieve prev msgs
 socket.on('pastMessages', (data) => {
@@ -24,6 +29,10 @@ socket.on('chatMessage', (data) => {
 })
 
 window.addEventListener('load', () => {
+    let username = document.getElementById('user-name');
+    console.log(sessionStorage.getItem('name'));
+    username.innerHTML = sessionStorage.getItem('name');
+
     let msgBox = document.getElementById('msg-input');
     let chatForm = document.getElementById('chat-form');
 
