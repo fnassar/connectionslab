@@ -16,11 +16,11 @@ let messages = [];
 // connect to server
 io.sockets.on('connect', (socket) => {
     console.log("we have a new client: ", socket.id);
-
-    // socket.name = data.name;
-    // socket.roomname = data.room;
-
-    // socket.join(socket.roomname)
+    socket.on('userData', (data) => {
+        socket.name = data.name;
+        socket.roomname = data.room;
+        socket.join(socket.roomname);
+    })
 
     let data = { oldMessages: messages };
     socket.to(socket.roomname).emit('pastMessages', data);
@@ -31,6 +31,7 @@ io.sockets.on('connect', (socket) => {
         messages.push(data);
         console.log(messages);
         io.socket.to(socket.roomname).emit('chatMessage', data);
+
 
     })
 

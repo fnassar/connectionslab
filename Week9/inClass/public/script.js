@@ -30,16 +30,27 @@ socket.on('chatMessage', (data) => {
 
 window.addEventListener('load', () => {
     let username = document.getElementById('user-name');
-    console.log(sessionStorage.getItem('name'));
+    // console.log(sessionStorage.getItem);
+    let rooms = {
+        name: sessionStorage.getItem('name'),
+        room: sessionStorage.getItem('room'),
+    }
+
+    console.log(rooms);
+
+    socket.on('userData', rooms);
+
     username.innerHTML = sessionStorage.getItem('name');
+
 
     let msgBox = document.getElementById('msg-input');
     let chatForm = document.getElementById('chat-form');
 
+
     // e=event
     chatForm.addEventListener('submit', (e) => {
         e.preventDefault(); // stops eg enter to submit
-        let name = document.getElementById('name-input').value;
+        let name = sessionStorage.getItem('name');
         let msg = document.getElementById('msg-input').value;
 
         chatObj = {
