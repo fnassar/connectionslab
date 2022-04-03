@@ -1,6 +1,8 @@
-html,
 body {
-    margin: 2vw;
+    background-image: url("images/bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
     padding: 0;
 }
 
