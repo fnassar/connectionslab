@@ -1,7 +1,73 @@
 body {
-    background-image: url("images/bg.png");
-    background-size: cover;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
+    min-height: 98vh;
+    min-width: 98vw;
+    /*  */
+    background-image: url("images/bg.png");
+    background-color: rgb(25, 56, 25);
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+    /*  */
+    background-size: cover;
+    background-attachment: fixed;
+    /*  */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*  */
+    font-family: 'Corben', cursive;
+    color: ivory;
+}
+
+.input {
+    margin: 0vh;
+    min-width: 96vw;
+    min-height: 97vh;
+    /*  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*  */
+    position: fixed;
+    z-index: 5;
+}
+
+.input-form {
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-text {
+    margin: 3vh;
+    padding: 1.5vh;
+    display: block;
+    border: none;
+    border: transparent;
+    background-color: transparent;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    border-bottom: 1px solid #fffff0;
+    color: #fffff0;
+    font-size: 1.5vw;
+    text-align: center;
+    /*  */
+    /* border-radius: 1vh 1vh 0 0;
+    box-shadow: 0vh 0vh 2vh 2vh rgba(0, 0, 0, 0.2); */
+}
+
+#username {
+    width: max-content;
+}
+
+#quote {
+    width: 32vw;
 }
