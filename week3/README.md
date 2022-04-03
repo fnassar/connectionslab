@@ -17,8 +17,8 @@ I would like to add a pop up feature if I have time *(Like image zoom kind of th
 
 ## Website Link
 The current representation of my website is very simple as I am yet to add many steps, p5 was giving me some trouble and it took more time than I expected trying to figure out how to put the sketch inside a div *still trying*.
-[_Week 3_ Update](https://fnassar.github.io/connectionslab/week3/assignment/index.html "Website link")
+[_Week 3_ Update](https://fnassar.github.io/connectionslab/Week3/assignment/index.html "Website link")
 
 ## Wire frame
 the wire frame includes the pop up window part as I feel like it is more user friendly to have an almost full screen map than a small half screen one. I also plan on adding it even if I don't have the time before the deadline for project 1.
-![alt text](https://github.com/fnassar/connectionslab/blob/main/week3/assignment/images/WorldMap.jpeg "Wire Frame")
+![alt text](https://github.com/fnassar/connectionslab/blob/main/Week3/assignment/images/WorldMap.jpeg "Wire Frame")

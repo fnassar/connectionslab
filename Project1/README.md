@@ -1,6 +1,6 @@
 <!-- Provides a clear description of the project, production decisions (i.e. technical, design, conceptual, creative etc), influences and inspiration, key challenges and solutions, overall lessons learned as well as potential next steps, and relevant references/resources that were utilized 
 
-![alt text](https://github.com/fnassar/connectionslab/blob/main/week3/assignment/images/WorldMap.jpeg "Wire Frame")
+![alt text](https://github.com/fnassar/connectionslab/blob/main/Week3/assignment/images/WorldMap.jpeg "Wire Frame")
 -->
 # Project 1 Documentation 
 ## World Map Seaech
@@ -39,7 +39,7 @@ That however, did not work for 2 main reasons:
 Then I decided on spliting screen in half as shown in the wire frame bellow. That would have been really hard for the user I think. Having country info, images and map all in one place i think would be too much. the wire frame I had did not have enough space for anything extra with the design I was going for.
 
 ### initial Wireframe:
-<img src="https://github.com/fnassar/connectionslab/blob/main/week3/assignment/images/WorldMap.jpeg" alt="Image not found" width="500"/>
+<img src="https://github.com/fnassar/connectionslab/blob/main/Week3/assignment/images/WorldMap.jpeg" alt="Image not found" width="500"/>
 
 ### Final WireFram:
 I also usually prefer simplistic aspects that are easy for the eye and that would not have been. 
