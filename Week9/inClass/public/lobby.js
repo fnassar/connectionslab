@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
 
         sessionStorage.setItem('name', name);
         sessionStorage.setItem('room', room);
-        console.log(sessionStorage.getItem('name'), sessionStorage.getItem('room'));
 
         window.location = './chat.html';
     })

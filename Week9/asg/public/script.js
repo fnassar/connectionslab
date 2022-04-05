@@ -11,9 +11,6 @@ let y = 0;
 let brush = 1;
 let innerBrush;
 
-
-
-
 window.addEventListener('load', () => {
     socket.on('connect', () => {
         console.log("client connected via sockets");

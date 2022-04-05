@@ -7,27 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script> -->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <!-- stylesheets -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Varela&display=swap" rel="stylesheet">
 
     <title>Socket App</title>
 
 </head>
 
 <body>
-    <!-- name and qoute input -->
-    <section class="input" id="input">
-        <form class="input-form" action="submit">
-            <input class="input-text" id="username" type="text" placeholder="Please enter your Name">
-            <input class="input-text" id="quote" type="text" placeholder="Enter something that reminds you of enviroment">
-        </form>
+    <!-- <quotes> -->
+    <section class="quotes" id="quotes">
+
     </section>
     <!-- leaves -->
-    <!-- <quotes> -->
+    <section class="leaves" id="leaves">
+
+    </section>
+    <!-- name and qoute input -->
+    <section class="main" id="main">
+        <h1 class="main_title" id="main_title">FALLING LEAVES</h1>
+        <div id="main_form_div">
+            <form class="main_form" id="main_form">
+                <input class="main_form_text" id="username" type="text" placeholder="Please enter your Name" required>
+                <input class="main_form_text" id="quote" type="text" placeholder="Enter something that reminds you of enviroment">
+                <button style="display:none;"></button>
+            </form>
+        </div>
+    </section>
+
     <!-- LEAVES/Qoutes
-        <img src=images/help.jpg id='i1' style="position:absolute; left: 500; top: 100;">
+        <img src=images/help.jpg id='i1' ="position:absolute; left: 500; top: 100;">style
         <br><br><br><br>
         <div id='msg'></div>
      -->
