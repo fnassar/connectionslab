@@ -2,6 +2,7 @@ let socket = io();
 // leaves variables
 let filenames = ["leaf1.png", "leaf2.png", "leaf3.png", "leaf4.png"];
 let leaves = [];
+let leavesObj = [];
 let quotes = [];
 let submit = false;
 
@@ -16,11 +17,8 @@ window.addEventListener('load', () => {
     let username;
     let quote;
     let nameData;
-    let nameloc = Math.random() * window.innerWidth;
-    let qouteloc = {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight
-    }
+    let nameloc;
+    let qouteloc;
     if (submit) {
         formDiv.style.display = "none";
     }
@@ -28,10 +26,15 @@ window.addEventListener('load', () => {
         e.preventDefault();
         username = document.getElementById('username').value;
         quote = document.getElementById('quote').value;
-
+        nameloc = (Math.random() * window.innerWidth).toFixed(2);
         nameData = {
             name: username,
-            nameloc: nameloc
+            nameloc: nameloc,
+            n: Math.floor(Math.random() * 4 + 1)
+        }
+        qouteloc = {
+            x: (Math.random() * window.innerWidth).toFixed(2) - 20,
+            y: (Math.random() * window.innerHeight).toFixed(2)
         }
         locData = {
             quote: quote,
@@ -47,7 +50,11 @@ window.addEventListener('load', () => {
         submit = true;
 
         socket.emit('newLeaf', nameData);
+        for (let i = 0; i < leavesObj.length; i++) {
+            leavesObj[i].timer();
+        }
     })
+
 
 })
 
@@ -59,38 +66,14 @@ socket.on('addLeaf', (data) => {
 
 function newLeaf() {
     console.log("here");
-    console.log(leaves);
+    console.log(leaves[0].name);
+    let n = leaves.length - 1;
+    let newLeaf = new Leaves(leaves[n].name, leaves[n].nameloc, "5vh", leaves[n].n);
+    newLeaf.createElem();
+    leavesObj.push(newLeaf);
+    for (let i = 0; i < leavesObj.length; i++) {
+        leavesObj[i].addEventListener('load', () => {
+            leavesObj[i].timer();
+        })
+    }
 }
-
-
-/* <script >
-function reset1(){
-clearTimeout(my_time);
-document.getElementById('i1').style.left= "500px";
-document.getElementById('i1').style.top= "100px";
-document.getElementById("msg").innerHTML="";
-}
-
-function disp(){
-var step=1; // Change this step value
-//alert("Hello");
-var y=document.getElementById('i1').offsetTop;
-var x=document.getElementById('i1').offsetLeft;
-document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
-if(y < 400 ){y= y +step;
-document.getElementById('i1').style.top= y + "px"; // vertical movment
-}else{
-if(x < 800){x= x +step;
-document.getElementById('i1').style.left= x + "px"; // horizontal movment
-}
-}
-//////////////////////
-}
-
-function timer(){
-disp();
-my_time=setTimeout('timer()',10);
-}
-</script>
-
-*/
