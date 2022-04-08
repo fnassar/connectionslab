@@ -23,6 +23,7 @@ window.addEventListener('load', () => {
         formDiv.style.display = "none";
     }
     nameForm.addEventListener('submit', (e) => {
+        socket.emit('load');
         e.preventDefault();
         username = document.getElementById('username').value;
         quote = document.getElementById('quote').value;
@@ -52,22 +53,23 @@ window.addEventListener('load', () => {
 
         socket.emit('newLeaf', nameData);
         for (let i = 0; i < leavesObj.length; i++) {
-            leavesObj[i].timer();
+            leavesObj[i].display();
         }
     })
 })
 
 socket.on('addLeaf', (data) => {
-        console.log(data);
-        leaves.push(data);
-        newLeaf();
-    })
-    /* socket.on('updateLeaf', (obj) => {
-        console.log(obj);
-         debugger;
-         obj.update();
-     })
-     */
+    console.log(data);
+    leaves.push(data);
+    newLeaf();
+})
+socket.on('newPos', (obj) => {
+    console.log("update");
+    // debugger;
+    console.log(n);
+    leavesObj[n].display();
+
+})
 
 function newLeaf() {
     console.log("here");
@@ -78,9 +80,6 @@ function newLeaf() {
     leavesObj.push(newLeaf);
     let divs = document.getElementsByClassName('leaf_div');
     for (let i = 0; i < leavesObj.length; i++) {
-        console.log('loading');
         leavesObj[i].timer();
-        console.log('loaded');
-
     }
 }

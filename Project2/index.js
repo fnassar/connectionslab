@@ -9,20 +9,25 @@ let server = http.createServer(app);
 //Initialize socket.io
 io = new io.Server(server);
 
+let leaves = [];
+
 
 app.use('/', express.static('public'));
 // connect to server
 io.sockets.on('connect', (socket) => {
     console.log("we have a new client: ", socket.id);
     socket.on('disconnect', () => {
-            console.log("client: ", socket.id, "is disconnected");
-        })
-        // socket.on('newLeaf', (data) => {
-        //     io.sockets.emit('addLeaf', data);
-        //     console.log(data);
-        // })
+        console.log("client: ", socket.id, "is disconnected");
+    })
+    socket.on('load');
+    socket.on('newLeaf', (data) => {
+        leaves.push(data);
+        // console.log(leaves);
+        io.sockets.emit('addLeaf', data);
+        // console.log(data);
+    })
     socket.on('newPos', (data) => {
-        io.sockets.emit('updateLeaf', data);
+        io.sockets.emit('newPos', data);
         // console.log(data);
     })
 

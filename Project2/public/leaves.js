@@ -43,6 +43,7 @@ class Leaves {
         // don't add ids too many arguments use array with get class name if needed
         // add leaf div to element
         section_cont.appendChild(this.div_cont);
+        // n++;
     }
 
     reset = () => {
@@ -54,11 +55,11 @@ class Leaves {
 
     display = () => {
         if (this.loc.y >= this.g) {
-            this.loc.y = 0;
+            this.step.y = 0;
 
             // this.end = true;
         } else {
-            this.step.y = 5;
+            this.step.y = 2;
         }
         this.loc.y += this.step.y;
         socket.emit('newPos', this);
@@ -66,20 +67,15 @@ class Leaves {
         this.div_cont.style.top = this.loc.y + "px";
 
         this.div_cont.style.left = this.loc.x + "px";
-    }
-    update = () => {
-        this.div_cont.style.top = this.loc.y + "px";
-
-        this.div_cont.style.left = this.loc.x + "px";
-    }
-    timer = () => {
-        this.display();
         if (this.end) {
-            return;
-        } else {
-            this.my_time = setTimeout(this.timer, 500);
-            console.log('in here')
+            this.reset();
         }
+    }
+
+    timer = () => {
+        socket.emit('newPos', n);
+
+        this.my_time = setTimeout(this.timer, 5000);
     }
 
 }
