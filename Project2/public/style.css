@@ -99,14 +99,15 @@ body {
 }
 
 .leaf_name {
-    background-color: hsla(34, 78%, 91%, 0.4);
-    border-radius: 1vh;
-    color: rgb(25, 25, 25);
+    /* background-color: hsla(34, 78%, 91%, 0.4); */
+    /* border-radius: 1vh; */
+    /* color: rgb(25, 25, 25); */
+    color: antiquewhite;
     display: block;
     /* position: absolute; */
     top: 100px;
     text-align: center;
-    width: 7vh;
+    width: 9vh;
     margin: 0 auto;
     font-size: 2vh;
     top: 0px;
@@ -115,6 +116,6 @@ body {
 .leaf_image {
     display: block;
     /* position: absolute; */
-    max-height: 7vh;
+    max-height: 9vh;
     width: auto;
 }

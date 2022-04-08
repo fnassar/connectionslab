@@ -26,7 +26,8 @@ window.addEventListener('load', () => {
         e.preventDefault();
         username = document.getElementById('username').value;
         quote = document.getElementById('quote').value;
-        nameloc = (Math.random() * window.innerWidth).toFixed(2);
+        nameloc = (Math.random() * (window.innerWidth - 50)).toFixed(2);
+        console.log(nameloc);
         nameData = {
             name: username,
             nameloc: nameloc,
@@ -54,15 +55,19 @@ window.addEventListener('load', () => {
             leavesObj[i].timer();
         }
     })
-
-
 })
 
 socket.on('addLeaf', (data) => {
-    console.log(data);
-    leaves.push(data);
-    newLeaf();
-})
+        console.log(data);
+        leaves.push(data);
+        newLeaf();
+    })
+    /* socket.on('updateLeaf', (obj) => {
+        console.log(obj);
+         debugger;
+         obj.update();
+     })
+     */
 
 function newLeaf() {
     console.log("here");
@@ -71,9 +76,11 @@ function newLeaf() {
     let newLeaf = new Leaves(leaves[n].name, leaves[n].nameloc, "5vh", leaves[n].n);
     newLeaf.createElem();
     leavesObj.push(newLeaf);
+    let divs = document.getElementsByClassName('leaf_div');
     for (let i = 0; i < leavesObj.length; i++) {
-        leavesObj[i].addEventListener('load', () => {
-            leavesObj[i].timer();
-        })
+        console.log('loading');
+        leavesObj[i].timer();
+        console.log('loaded');
+
     }
 }
