@@ -74,7 +74,6 @@ class Leaves {
 
     timer = () => {
         socket.emit('newPos', n);
-
         this.my_time = setTimeout(this.timer, 5000);
     }
 
