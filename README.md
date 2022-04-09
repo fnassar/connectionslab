@@ -10,4 +10,4 @@
 
 [Week 9](./Week9/asg/README.md "readme")
 
-[Project 2](./Project2/README.md "readme")
+[Project 2](https://github.com/andresugartechea/Project2/blob/main/README.md "readme")
