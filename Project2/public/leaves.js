@@ -15,7 +15,6 @@ class Leaves {
         this.image = "/images/leaf" + (n) + ".png";
         this.leaf = document.createElement('img'); // create image
         this.div_cont; // create div for leaf
-
         this.nameTag = document.createElement('p'); // create text tag
         // this.dir = 1; // for qoutes only
         this.end = false;
@@ -39,7 +38,6 @@ class Leaves {
         // add text to div
         this.div_cont.appendChild(this.leaf);
         this.div_cont.appendChild(this.nameTag);
-
         // don't add ids too many arguments use array with get class name if needed
         // add leaf div to element
         section_cont.appendChild(this.div_cont);

@@ -12,8 +12,6 @@ socket.on('connect', () => {
 })
 
 window.addEventListener('load', () => {
-    let nameForm = document.getElementById('main_form');
-    let formDiv = document.getElementById('main_form_div');
     let username;
     let quote;
     let nameData;
