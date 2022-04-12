@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     // console.log(sessionStorage.getItem);
     let rooms = {
         name: sessionStorage.getItem('name'),
-        room: sessionStorage.getItem('room'),
+        room: sessionStorage.getItem('room')
     }
 
     console.log(rooms);
