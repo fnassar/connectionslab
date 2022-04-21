@@ -5,30 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-
-
+    <!-- P5/Ml5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.js" type="text/javascript"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corben&family=Rubik+Beastly&display=swap" rel="stylesheet">
+    <!-- iconify -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--  -->
     <title>Aframe</title>
+    <!-- source for snap to section (https://codepen.io/vincentorback/pen/zxRyzj) -->
 </head>
 
 <body>
-    <section id="title" class="container title">
-        <h1>balalal</h1>
-        <form id="enter_VR" class="enter_VR">
-            <input type="text" placeholder="Name" id="name">
-            <input type="text" placeholder="Name" id="shape">
-            <button type="submit" id="button_VR" class="button_VR">Open VR World</button>
-        </form>
+    <nav>
+        <ul>
+            <li><a class="nav-link" href="#title">Title</a></li>
+            <li><a class="nav-link" href="#canvas">Canvas</a></li>
 
-    </section>
-    <section id="canvas" class="container canvas">
-        <script src="js/three.js"></script>
-        </a-scene>
-        <button id="exit_VR" class="button_VR exit_VR">Back to Home</button>
-    </section>
-
+        </ul>
+    </nav>
+    <main class="Loop js-loop" id="js-loop">
+        <section class="container title" id="title">
+            <h1>
+                Your Camera is your new Paint brush
+            </h1>
+            <p>
+                Using Ml5 Handpose with Webcam
+            </p>
+            <div class="scroll-icon">
+                <p>
+                    <span class="iconify" data-icon="bx:bxs-mouse" data-inline="false"></span>
+                    </br>
+                    <span class="iconify" data-icon="bx:bx-chevrons-down" data-inline="false"></span>
+                </p>
+            </div>
+        </section>
+        <section class="container canvas" id="canvas">
+            <h2>Put your hand up and use small image to navigate</h2>
+            <div id="canvas_container" class="canvas_container">
+                <button type="button" id="erase" class="erase">Click to toggle eraser</button>
+                <button type="button" id="endButton" class="endButton">Click to close Canvas</button>
+            </div>
+            <div id="startCanvas" class="startCanvas">
+                <button type="button" id="startButton" class="startButton">Click to see Canvas</button>
+            </div>
+        </section>
+    </main>
+    <script src="sketch.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,29 +1,43 @@
+let canvasContainer;
+let startDiv;
+let startButton;
+let endButton;
+let eraser;
+let picker;
 let canvas;
-let title;
-let enter;
-let exit;
-let open = false;
-
+let canvasTop;
+let canvasLeft;
 window.addEventListener('load', () => {
-    canvas = document.getElementById('canvas');
-    title = document.getElementById('title');
-    enter = document.getElementById('enter_VR');
-    exit = document.getElementById('exit_VR');
-    // enter.addEventListener('submit', () => {
-    //     canvas.style.display = 'block';
-    //     title.style.display = 'none';
-    // })
-    // exit.addEventListener('click', () => {
-    //     canvas.style.display = 'none';
-    //     title.style.display = 'block';
-    // })
+    canvasContainer = document.getElementById('canvas_container');
+    startDiv = document.getElementById('startCanvas');
+    startButton = document.getElementById('startButton');
+    endButton = document.getElementById('endButton');
+    eraser = document.getElementById('erase');
+    picker = document.getElementsByTagName('input');
+    canvas = document.getElementById('defaultCanvas0');
+
+    stopLoop();
+    picker[0].style.display = "none";
+    picker[0].className = "picker";
+    startButton.addEventListener('click', () => {
+        loopagain();
+        startDiv.style.display = "none";
+        canvasContainer.style.display = "flex";
+        canvasTop = canvas.offsetTop;
+        canvasLeft = canvas.offsetLeft;
+        picker[0].style.bottom = canvasTop;
+        picker[0].style.left = canvasLeft;
+        picker[0].style.display = "flex";
+
+    })
+    endButton.addEventListener('click', () => {
+        stopLoop();
+        startDiv.style.display = "block";
+        canvasContainer.style.display = "none";
+        picker[0].style.display = "none";
+    })
+    eraser.addEventListener('click', () => {
+        erase = !erase;
+    })
 
 })
-
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
